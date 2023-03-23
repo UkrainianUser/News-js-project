@@ -1,3 +1,28 @@
 <header class="header">
-  <div class="container"></div>
+  <div class="container">
+    <div class="header__wrapper">
+      <nav class="site-nav">
+        <a class="logo link" href="./index.html">News</a>
+        <ul class="site-nav__list list">
+          <li class="site-nav__item"><a class="site-nav__link link site-nav__link--current" href="./index.html">Home</a></li>
+          <li class="site-nav__item"><a class="site-nav__link link" href="./favorite.html">Favorite</a></li>
+          <li class="site-nav__item"><a class="site-nav__link link" href="./read.html">Read</a></li>
+        </ul>
+      </nav>
+      <form id="form">
+        <input id="input-search" class="search" type="text" placeholder="Search" name="search">
+        <button type="submit"></button> 
+      </form>  
+      <div class="theme-switch">
+        <label class="theme-switch__light" for="toggle"><span class="theme-word">Light</span><svg class="icon-sun" width="21" height="21">
+          <use href="./svg/symbol-defs.svg#icon-sun"></use>
+        </svg></label>
+        <input id="toggle" type="checkbox" />
+        <label class="theme-switch__dark" for="toggle"><span class="theme-word">Dark</span><svg class="icon-moon" width="21" height="21">
+          <use href="./svg/symbol-defs.svg#icon-moon"></use>
+        </svg>
+        </label>
+      </div>
+    </div>
+  </div>
 </header>
