@@ -15,14 +15,14 @@ const cardFavorite = document.querySelector(".card-favorite__list");
 cardFavorite.addEventListener("click", handleClickFavoriteBtn);
 
 function handleClickFavoriteBtn(event) {
- 
 
- const favoritNewsId = event.target.dataset.id;
- const parsedeFavoriteNews = load(FAVORITE_KEY);
- const newsAfterRemove = parsedeFavoriteNews.filter(value => value.id !== favoritNewsId);
- renderCardFavorite(newsAfterRemove);
- save(FAVORITE_KEY, newsAfterRemove);
- 
+
+const favoritNewsId = event.target.dataset.id;
+const parsedeFavoriteNews = load(FAVORITE_KEY);
+const newsAfterRemove = parsedeFavoriteNews.filter(value => value.id !== favoritNewsId);
+renderCardFavorite(newsAfterRemove);
+save(FAVORITE_KEY, newsAfterRemove);
+
 }
 
 function renderCardFavorite(news) {
@@ -45,7 +45,7 @@ function renderCardFavorite(news) {
       </button>
     </div>
     <h2 class="card-favorite__title">
-         ${title}
+        ${title}
         </h2>
         <p class="card-favorite__text">
           ${paragraph}
