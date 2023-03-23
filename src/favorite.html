@@ -15,9 +15,19 @@
   </head>
   <body>
     <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/heder.html"></include>
+    <include src="./partials/header.html"></include>
 
-    <main></main>
+    <main>
+      <div class="favorite-news">
+        <div class="container">
+          <div class="favorite-cards">
+            <include
+              src="./partials/favorite-page/favorite-card.html"
+            ></include>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <script type="module" src="./index.js"></script>
   </body>

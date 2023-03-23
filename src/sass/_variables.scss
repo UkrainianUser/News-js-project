@@ -1,9 +1,32 @@
 //кольори
-$prim-black-color: #111321;
+$prim-text-color: #111321;
 $prim-white-color: #ffffff;
 $accent-color: #4440f6;
+$accent-background:#4b48db;
 $passive-color: #a8a8a8;
+$marking-color: #00dd73;
+$footer-color: #7a7a7a;
+$filter-bordercolor: #4440f7;
+$line-color: #929292;
+$colormoon-icon: #5F6775;
+$lt-placeholder-color: rgb(17, 19, 33, .4);
+$category-bg-color: rgba(68, 64, 247, 0.7);
+
+// *dt - dark theme
+$dt-color: #2e2e2e;
+$dt-prim-text-color: #f4f4f4;
+$dt-sec-text-color: #000000;
+$dt-placeholder-color: rgb(244, 244, 244, .4);
 
 //шрифти font-family:
 $prim-font: 'Manrope', sans-serif;
 $sec-font: 'Poppins', sans-serif;
+
+//точки перелому
+$pre_mobile: 479.98px;
+$pre_tablet: 767.98px;
+$pre_desktop: 1279.98px;
+
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1280px;

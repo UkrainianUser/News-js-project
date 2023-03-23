@@ -15,9 +15,26 @@
   </head>
   <body>
     <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/heder.html"></include>
+    <include src="./partials/header.html"></include>
 
-    <main></main>
+    <main>
+      <div class="filter">
+        <div class="container">
+          <div class="filter__categories">
+            <include
+              src="./partials/home-page/filter-categories.html"
+            ></include>
+          </div>
+          <div class="filter__date">
+            <include src="./partials/home-page/filter-date.html"></include>
+          </div>
+        </div>
+        <div class="news">
+          <include src="./partials/home-page/news-card.html"></include>
+          <include src="./partials/home-page/weather.html"></include>
+        </div>
+      </div>
+    </main>
 
     <script type="module" src="./index.js"></script>
   </body>

@@ -1,0 +1,48 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+body {
+	font-family: $prim-font;
+  font-size: 16px;
+	color: $prim-text-color;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  @media screen and (min-width: 320px) {
+    max-width: 320px;
+  }
+
+  @media screen and (min-width: 780px) {
+    max-width: 780px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    max-width: 1280px;
+  }
+}
