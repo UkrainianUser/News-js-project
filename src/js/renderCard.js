@@ -1,7 +1,7 @@
-import lightFormat from 'date-fns/lightFormat';
+// import lightFormat from 'date-fns/lightFormat';
 
 const articleList = document.querySelector(".card-news__list");
- export function renderCard(news) {
+export function renderCard(news) {
     const markup = news.map(({id, title, paragraph, img, data, url, category, multimedia}) => {
 
           return `<li class="card-news__item">
@@ -21,7 +21,7 @@ const articleList = document.querySelector(".card-news__list");
       </button>
     </div>
     <h2 class="card-news__title">
-         ${title}
+        ${title}
         </h2>
         <p class="card-news__text">
           ${paragraph}
