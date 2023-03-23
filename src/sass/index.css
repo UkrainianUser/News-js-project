@@ -131,7 +131,7 @@ body {
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
-  color: #ffffff;
+  color: #FFFFFF;
 }
 
 .card-news__button {
@@ -144,19 +144,10 @@ body {
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
   text-align: center;
   color: #111321;
-  background-color: #ffffff;
-  border: #ffffff;
+  background-color: #FFFFFF;
   border-radius: 20px;
-}
-
-.card-news__icon {
-  fill: #111321;
 }
 
 .card-news__title {
@@ -196,7 +187,7 @@ body {
   font-size: 14px;
   line-height: 1.36;
   text-align: right;
-  color: #a8a8a8;
+  color: #A8A8A8;
   display: inline-block;
 }
 
