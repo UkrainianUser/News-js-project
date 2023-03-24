@@ -10,7 +10,7 @@ const NEWS_KEY = "newsObject";
 
 export async function fetchNews() {
     try {
-       const response = await axios.get(URL, {
+      const response = await axios.get(URL, {
     params: {
         "api-key": API_KEY_NEWS,
       }

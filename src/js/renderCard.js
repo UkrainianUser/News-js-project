@@ -1,4 +1,4 @@
-// import lightFormat from 'date-fns/lightFormat';
+import lightFormat from 'date-fns/lightFormat';
 
 const articleList = document.querySelector(".card-news__list");
 export function renderCard(news) {

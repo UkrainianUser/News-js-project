@@ -9,7 +9,6 @@ if (load(FAVORITE_KEY)) {
     renderCardFavorite(favoriteNews);
 }
 
-
 const cardFavorite = document.querySelector(".card-favorite__list");
 
 cardFavorite.addEventListener("click", handleClickFavoriteBtn);
