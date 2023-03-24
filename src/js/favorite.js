@@ -15,7 +15,9 @@ const cardFavorite = document.querySelector(".card-favorite__list");
 cardFavorite.addEventListener("click", handleClickFavoriteBtn);
 
 function handleClickFavoriteBtn(event) {
- 
+  if (event.target.nodeName !== "BUTTON") {
+    return;
+  }
 
  const favoritNewsId = event.target.dataset.id;
  const parsedeFavoriteNews = load(FAVORITE_KEY);
@@ -52,7 +54,7 @@ function renderCardFavorite(news) {
         </p>
         <time class="card-favorite__time">${lightFormat(new Date(data
             ), 'dd/MM/yyyy')}</time>
-        <a class="card-favorite__element" href=${url}>Read more</a>
+        <a class="card-favorite__element" href=${url} target="_blank" rel="noreferrer noopener">Read more</a>
       </li>`  
     }).join("");
     cardFavorite.innerHTML = markup;
