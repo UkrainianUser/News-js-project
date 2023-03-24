@@ -13,7 +13,15 @@ if (load(READ_KEY).length) {
  
     const readNews = load(READ_KEY);
     const rangeDate = getSortDate(readNews);
-    renderCardRead(rangeDate, readNews);
+    const readObj = rangeDate.reduce((obj, date) => {
+        obj[date] = readNews.filter((value) => {
+           return isSameDay(new Date(date), new Date(value.data));
+        });
+        return obj;
+      }, {});
+      
+    renderCardRead(readObj);
+
  }
 
  function getSortDate(news) {
@@ -50,13 +58,17 @@ function handleClickBtn(event) {
     save(READ_KEY, newsAfterRemove);
 }
 
-function renderCardRead(arrayDate, news) {
-    const markup = arrayDate.map((item) => {
+
+function renderCardRead(readObj) {
+    const markup = Object.keys(readObj).map((item) => {
+
          
          return `  <li class="date__item">
          <div class="date__card"><h3 class="date__text">${lightFormat(new Date(item
              ), 'dd/MM/yyyy')}</h3></div>
-         <div>${getText(news)}</div>
+
+         <div>${getText(readObj[item])}</div>
+
          
        </li>`
      }).join("");

@@ -9,12 +9,12 @@ if (load(FAVORITE_KEY)) {
     renderCardFavorite(favoriteNews);
 }
 
-
 const cardFavorite = document.querySelector(".card-favorite__list");
 
 cardFavorite.addEventListener("click", handleClickFavoriteBtn);
 
 function handleClickFavoriteBtn(event) {
+
   if (event.target.nodeName !== "BUTTON") {
     return;
   }
@@ -24,7 +24,7 @@ function handleClickFavoriteBtn(event) {
  const newsAfterRemove = parsedeFavoriteNews.filter(value => value.id !== favoritNewsId);
  renderCardFavorite(newsAfterRemove);
  save(FAVORITE_KEY, newsAfterRemove);
- 
+
 }
 
 function renderCardFavorite(news) {
@@ -47,7 +47,7 @@ function renderCardFavorite(news) {
       </button>
     </div>
     <h2 class="card-favorite__title">
-         ${title}
+        ${title}
         </h2>
         <p class="card-favorite__text">
           ${paragraph}

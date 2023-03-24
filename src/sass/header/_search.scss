@@ -1,0 +1,42 @@
+.search-field {
+    position: relative;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+
+}
+
+.search-field__btn {
+    position: absolute;
+    border: none;
+    background-color: $prim-background;
+    left: 12px;
+
+}
+
+#search-field__input {
+    font-family: $sec-font;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.75;
+    letter-spacing: 0.02em;
+    color: $prim-text-color;
+    opacity: 0.4;
+    border: 1px solid $prim-text-color;
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding-left: 48px;
+    width: 173px;
+    height: 31px;
+
+    @media screen and (min-width: 768px) {
+        font-size: 14px;
+        line-height: 1.71;
+        width: 213px;
+
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 288px;
+    }
+}
