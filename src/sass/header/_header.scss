@@ -121,7 +121,7 @@
     width: 288px;
 }
 
-* Light theme */
+/* Light theme */
 body[data-theme="light"] {
     background-color: $prim-background;
     color: $prim-text-color;
@@ -137,7 +137,7 @@ body[data-theme="dark"] {
     }
 }
 .theme-switch {
-    position: absolute;
+    // position: absolute;
     bottom: 18px;
     left: 16px;
     display: flex;
