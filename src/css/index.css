@@ -209,21 +209,14 @@ button {
 
 .search-field {
   position: relative;
+  display: flex;
+  align-items: center;
   margin-left: auto;
   display: flex;
   align-items: center;
   background-color: transparent;
   height: 31px;
 }
-@media screen and (min-width: 767.98px) {
-  .search-field {
-    border: 1px solid #111321;
-    border-radius: 20px;
-    margin-top: 44px;
-    margin-bottom: 31px;
-    width: 213px;
-  }
-
 @media screen and (min-width: 768px) {
   .search-field {
     margin-left: 32px;
@@ -236,13 +229,14 @@ button {
     margin-right: 147px;
   }
 }
-
-.search-field__btn {
-  position: absolute;
-  border: none;
-  background-color: #f4f4f4;
-  left: 12px;
-  cursor: pointer;
+@media screen and (min-width: 767.98px) {
+  .search-field {
+    border: 1px solid #111321;
+    border-radius: 20px;
+    margin-top: 44px;
+    margin-bottom: 31px;
+    width: 213px;
+  }
 }
 @media screen and (min-width: 1279.98px) {
   .search-field {
@@ -258,18 +252,6 @@ button {
   line-height: 1.75;
   letter-spacing: 0.02em;
   color: #111321;
-  opacity: 0.4;
-  border: 1px solid #111321;
-  box-sizing: border-box;
-  border-radius: 20px;
-  padding-left: 48px;
-  width: 173px;
-  height: 31px;
-  display: none;
-}
-@media screen and (min-width: 768px) {
-  #search-field__input {
-    display: block;
   border: none;
   background: none;
   outline: none;
@@ -313,6 +295,13 @@ button {
   }
 }
 
+.search-field__btn {
+  position: absolute;
+  border: none;
+  background-color: #f4f4f4;
+  left: 12px;
+  cursor: pointer;
+}
 @media screen and (max-width: 767.98px) {
   .search-field__btn {
     color: #111321;
@@ -325,7 +314,36 @@ button {
   }
 }
 
-.search__icon {
+#search-field__input {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.75;
+  letter-spacing: 0.02em;
+  color: #111321;
+  opacity: 0.4;
+  border: 1px solid #111321;
+  box-sizing: border-box;
+  border-radius: 20px;
+  padding-left: 48px;
+  width: 173px;
+  height: 31px;
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  #search-field__input {
+    display: block;
+    font-size: 14px;
+    line-height: 1.71;
+    width: 213px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #search-field__input {
+    width: 288px;
+  }
+}
+#search-field__input .search__icon {
   fill: #111321;
 }
 
@@ -628,5 +646,4 @@ button {
   color: #4440F7;
   text-decoration: none;
   cursor: pointer;
-}
-}}
+}/*# sourceMappingURL=index.css.map */
