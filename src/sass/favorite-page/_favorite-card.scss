@@ -1,0 +1,132 @@
+.card-favorite__list {
+    @media (min-width: 768px) {
+        display: flex;
+        gap: 30px;
+    }
+}
+
+.card-favorite__item {
+    position: relative;
+    margin-bottom: 28px;
+    width: 288px;
+    height: 630px;
+
+    @media (min-width: 768px) {
+        width: 353px;
+        height: 675px;
+    }
+
+    @media (min-width: 1200px) {
+        width: 395px;
+        height: 675px;
+    }
+}
+
+
+.card-favorite__link {
+    text-decoration: none;
+}
+
+.card-favorite__ovarlay {
+    position: relative;
+}
+
+
+.card-favorite__category {
+    position: absolute;
+    top: 40px;
+    width: 112px;
+    height: 24px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(68, 64, 247, 0.7);
+    border-radius: 0px 4px 4px 0px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+    color: $prim-white-color;
+}
+
+.card-favorite__button {
+    position: absolute;
+    bottom: 12px;
+    right: 8px;
+    width: 126px;
+    height: 28px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    // padding: 6px 12px;
+    text-align: center;
+    color: $prim-text-color;
+    background-color:$prim-white-color;
+    border:$prim-white-color;
+    border-radius: 20px;
+    
+}
+
+.card-favorite__icon {
+    fill:$prim-text-color;
+}
+
+.card-favorite__title {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.38;
+    letter-spacing: -0.01em;
+    color: $prim-text-color;
+    margin-top: 20px;
+
+    @media (min-width: 768px) {
+        font-size: 32px;
+    }
+
+}
+
+.card-favorite__text {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.36;
+    color:$prim-text-color;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    @media (min-width: 768px) {
+        font-size: 16px;
+        line-height: 1.38;
+    }
+}
+
+.card-favorite__time {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.36;
+    text-align: right;
+    color: $passive-color;
+    display: inline-block;
+
+}
+
+.card-favorite__element {
+    position: absolute;
+    right: 17px;
+    font-family: 'Manrope', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.36;
+    color: #4440F7;
+    text-decoration: none;
+    cursor: pointer;
+}
