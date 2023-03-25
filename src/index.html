@@ -15,7 +15,72 @@
   </head>
   <body>
     <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/header.html"></include>
+    <header class="header">
+      <div class="container">
+        <div class="header_topwrapper">
+          <a class="logo header__logo" href="./index.html" lang="en">News</a>
+          <button class="header__search-btn">
+            <svg class="search-icon" width="20" height="20">
+              <use href="./svg/symbol-defs.svg#icon-search"></use>
+            </svg>
+          </button>
+          <button
+            class="header__burger-btn js-open-menu"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <svg class="icon-burger-menu" width="24" height="24">
+              <use href="./svg/symbol-defs.svg#icon-menu_btn"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="header__wrapper">
+          <nav class="site-nav">
+            <a class="logo link" href="./index.html">News</a>
+            <ul class="site-nav__list list">
+              <li class="site-nav__item">
+                <a
+                  class="site-nav__link link site-nav__link--current"
+                  href="./index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="site-nav__item">
+                <a class="site-nav__link link" href="./favorite.html"
+                  >Favorite</a
+                >
+              </li>
+              <li class="site-nav__item">
+                <a class="site-nav__link link" href="./read.html">Read</a>
+              </li>
+            </ul>
+          </nav>
+          <form class="search-field" id="form-field">
+            <button class="search-field__btn" type="button" id="form-btn">
+              <svg class="search__icon" width="16" height="15">
+                <use href="./svg/symbol-defs.svg#icon-search"></use>
+              </svg>
+            </button>
+            <input type="text" id="search-field__input" placeholder="Search" />
+          </form>
+          <div class="theme-switch">
+            <label class="theme-switch__light" for="toggle"
+              ><span class="theme-word">Light</span
+              ><svg class="icon-sun" width="21" height="21">
+                <use href="./svg/symbol-defs.svg#icon-sun"></use></svg
+            ></label>
+            <input id="toggle" type="checkbox" />
+            <label class="theme-switch__dark" for="toggle"
+              ><span class="theme-word">Dark</span
+              ><svg class="icon-moon" width="21" height="21">
+                <use href="./svg/symbol-defs.svg#icon-moon"></use>
+              </svg>
+            </label>
+          </div>
+        </div>
+      </div>
+    </header>
 
     <main>
       <div class="filter">

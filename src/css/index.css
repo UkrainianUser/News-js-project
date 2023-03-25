@@ -63,7 +63,6 @@ body {
 }
 
 .container {
-  position: relative;
   width: 100%;
   margin: 0 auto;
   padding: 0 16px;
@@ -797,6 +796,10 @@ body[data-theme=dark] .icon-moon {
   color: #4440f7;
   text-decoration: none;
   cursor: pointer;
+}
+
+.weather-container {
+  position: relative;
 }
 
 .weather {
