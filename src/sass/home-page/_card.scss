@@ -8,6 +8,20 @@
     }
 }
 
+.card-news__item:nth-child(2){
+    @media (min-width: 1280px) {
+        margin-right: 395px;
+    }
+    @media (max-width: 768px) {
+        margin-right: 0;}
+}
+
+.card-news__item:nth-child(1){
+    @media (max-width: 1278px) {
+        margin-right: 720px;
+    }
+}
+
 .card-news__item {
     position: relative;
     margin-bottom: 28px;
