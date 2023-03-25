@@ -12,7 +12,7 @@ const cardNews = document.querySelector(".card-news__list");
 
 fetchNews();
 
- getNews();
+//  getNews();
 
  if (!load(FAVORITE_KEY)) {
   save(FAVORITE_KEY, []);
