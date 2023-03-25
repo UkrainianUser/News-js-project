@@ -1,8 +1,18 @@
 .search-field {
     position: relative;
-    margin-bottom: 30px;
     display: flex;
     align-items: center;
+    
+    @media screen and (min-width: 768px) {
+        margin-left: 32px;
+        margin-right: 24px;
+
+    }
+        @media screen and (min-width: 1200px) {
+            margin-left: 147px;
+            margin-right: 147px;
+    
+        }
 
 }
 
@@ -11,6 +21,8 @@
     border: none;
     background-color: $prim-background;
     left: 12px;
+    cursor: pointer;
+    
 
 }
 
@@ -28,8 +40,10 @@
     padding-left: 48px;
     width: 173px;
     height: 31px;
+    display: none;
 
     @media screen and (min-width: 768px) {
+        display: block;
         font-size: 14px;
         line-height: 1.71;
         width: 213px;
