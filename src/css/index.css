@@ -121,7 +121,7 @@ body {
   font-weight: 700;
   font-size: 42px;
   line-height: 1.36;
-  color: var(--main-color);
+  color: #111321;
 }
 
 .site-nav {
@@ -156,7 +156,7 @@ body {
 }
 
 .site-nav__link {
-  color: var(--main-color);
+  color: #111321;
   font-family: "Manrope";
   font-style: normal;
   font-weight: 700;
