@@ -1,0 +1,13 @@
+.weather-container {
+	position: relative;
+}
+.weather {
+	position: absolute;
+	right: 0;
+	width: 353px;
+	height: 675px;
+	background-color: $accent-color;
+	@media (max-width: 768px) {
+		position: relative;
+}
+}

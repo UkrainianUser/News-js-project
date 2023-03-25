@@ -7,10 +7,10 @@ export function renderCard(news) {
           return `<li class="card-news__item">
           <div class="card-news__ovarlay">
           <img
-          src=${img}
-          alt="Businesswoman"
-          width="288"
-          height="395"
+          src=${multimedia ? multimedia[1].url : ""}
+          alt=${multimedia ? multimedia[1].caption : "news image"}
+          width="395"
+          height="290"
         />
         <p class="card-news__category">${category}</p>
         <button data-id=${id} class="card-news__button" type="button">

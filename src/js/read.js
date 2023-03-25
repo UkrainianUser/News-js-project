@@ -8,8 +8,9 @@ const READ_KEY = "readNews";
 const FAVORITE_KEY = "favoriteNews";
 
 const dateWrapper = document.querySelector(".date__wrapper");
-
-if (load(READ_KEY).length) {
+getReadNews();
+function getReadNews() {
+  if (load(READ_KEY).length) {
  
     const readNews = load(READ_KEY);
     const rangeDate = getSortDate(readNews);
@@ -23,6 +24,7 @@ if (load(READ_KEY).length) {
     renderCardRead(readObj);
 
  }
+}
 
  function getSortDate(news) {
     const dateArray = news.map((item) => {
@@ -54,25 +56,23 @@ function handleClickBtn(event) {
 
     const newsAfterRemove = parsedReadNews.filter(value => value.id !== favoritNewsId);
     const rangeDate = getSortDate(newsAfterRemove);
-    renderCardRead(rangeDate, newsAfterRemove);
+    
     save(READ_KEY, newsAfterRemove);
+    getReadNews();
 }
 
 
 function renderCardRead(readObj) {
-    const markup = Object.keys(readObj).map((item) => {
+    const markup = Object.keys(readObj).map((item, index) => {
 
          
-         return `  <li class="date__item">
+         return `  <li class="date__item" data-index=${index}>
          <div class="date__card"><h3 class="date__text">${lightFormat(new Date(item
-             ), 'dd/MM/yyyy')}</h3></div>
+             ), 'dd/MM/yyyy')}</h3></div></li>
 
-         <div>${getText(readObj[item])}</div>
-
-         
-       </li>`
-     }).join("");
-      dateWrapper.innerHTML = markup;
+          <ul class="card-news__box">${getText(readObj[item])}</ul>`
+            }).join("");
+        dateWrapper.innerHTML = markup;
  }
 
  function getText(news) {
@@ -81,10 +81,10 @@ function renderCardRead(readObj) {
         return `<li class="card-news__item">
         <div class="card-news__ovarlay">
         <img
-        src=${img}
-        alt="Businesswoman"
-        width="288"
-        height="395"
+        src=${multimedia ? multimedia[1].url : ""}
+        alt=${multimedia ? multimedia[1].caption : "news image"}
+          width="395"
+          height="290"
       />
       <p class="card-news__category">${category}</p>
       <button data-id=${id} class="card-news__button" type="button">
@@ -107,3 +107,26 @@ function renderCardRead(readObj) {
   }).join(""); 
   return markup;
 } 
+
+dateWrapper.addEventListener("click", handleClickItem);
+function handleClickItem(event) {
+    
+    if (event.target.classList.contains("date__item")) {
+      const activeIndex = event.target.dataset.index;
+      if (!event.target.classList.contains("active")) {
+        event.target.classList.add("active");
+      } else {
+        event.target.classList.remove("active");
+      }
+     
+      const activeBox = document.getElementsByClassName("date__item");
+      const activeBoxEl = activeBox[activeIndex].nextElementSibling;
+
+     if(!activeBoxEl.classList.contains("active")) {
+        activeBoxEl.classList.add("active");
+     } else {
+        activeBoxEl.classList.remove("active");
+     }
+     
+    }
+}
