@@ -357,7 +357,6 @@ button {
   position: absolute;
   bottom: 12px;
   right: 8px;
-  width: 126px;
   height: 28px;
   font-family: "Manrope", sans-serif;
   font-weight: 500;
@@ -374,8 +373,16 @@ button {
   border-radius: 20px;
 }
 
+.card-news__button--add {
+  width: 126px;
+}
+
+.card-news__button--remove {
+  width: 168px;
+}
+
 .card-news__icon {
-  fill: #111321;
+  fill: #4440f6;
 }
 
 .card-news__title {
