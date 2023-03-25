@@ -807,6 +807,7 @@ body[data-theme=dark] .icon-moon {
   right: 0;
   width: 353px;
   height: 675px;
+  background-color: #4440f6;
 }
 @media (max-width: 768px) {
   .weather {
