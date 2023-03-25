@@ -21,6 +21,7 @@ if (load(READ_KEY).length) {
       }, {});
       
     renderCardRead(readObj);
+
  }
 
  function getSortDate(news) {
@@ -57,13 +58,17 @@ function handleClickBtn(event) {
     save(READ_KEY, newsAfterRemove);
 }
 
+
 function renderCardRead(readObj) {
     const markup = Object.keys(readObj).map((item) => {
+
          
          return `  <li class="date__item">
          <div class="date__card"><h3 class="date__text">${lightFormat(new Date(item
              ), 'dd/MM/yyyy')}</h3></div>
+
          <div>${getText(readObj[item])}</div>
+
          
        </li>`
      }).join("");
