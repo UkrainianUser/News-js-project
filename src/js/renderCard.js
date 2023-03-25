@@ -28,7 +28,7 @@ export function renderCard(news) {
         </p>
         <time class="card-news__time">${lightFormat(new Date(data
             ), 'dd/MM/yyyy')}</time>
-        <a class="card-news__element" href=${url}>Read more</a>
+        <a class="card-news__element" href=${url} target="_blank" rel="noreferrer noopener">Read more</a>
       </li>`  
     }).join("");
     articleList.innerHTML = markup;

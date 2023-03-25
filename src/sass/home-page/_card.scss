@@ -57,7 +57,6 @@
     position: absolute;
     bottom: 12px;
     right: 8px;
-    width: 126px;
     height: 28px;
     font-family: 'Manrope', sans-serif;
     font-weight: 500;
@@ -76,12 +75,26 @@
     
 }
 
-.card-news__icon {
-    fill:$prim-text-color;
+.card-news__button--add {
+    width: 126px;
 }
 
+.card-news__button--remove {
+    width: 168px;
+}
+
+
+.card-news__icon {
+    fill: $accent-color;
+}
+
+
+// .card-news__icon-favorite {
+//     fill: $accent-color;
+// }
+
 .card-news__title {
-    font-family: 'Manrope', sans-serif;
+    font-family: $prim-font;
     font-weight: 700;
     font-size: 24px;
     line-height: 1.38;
@@ -96,7 +109,7 @@
 }
 
 .card-news__text {
-    font-family: 'Manrope', sans-serif;
+    font-family: $prim-font;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.36;
@@ -118,7 +131,7 @@
 }
 
 .card-news__time {
-    font-family: 'Manrope', sans-serif;
+    font-family: $prim-font;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.36;
@@ -131,7 +144,7 @@
 .card-news__element {
     position: absolute;
     right: 17px;
-    font-family: 'Manrope', sans-serif;
+    font-family: $prim-font;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
