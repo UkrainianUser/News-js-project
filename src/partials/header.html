@@ -38,12 +38,18 @@
         </ul>
       </nav>
       <form class="search-field" id="form-field">
-        <button class="search-field__btn" id="form-btn">
-          <svg class="search__icon" width="16" height="15">
+        <button class="search-field__btn" type="submit" id="form-btn">
+          <svg class="search__icon" width="20" height="20">
             <use href="./svg/symbol-defs.svg#icon-search"></use>
           </svg>
         </button>
-        <input type="text" id="search-field__input" placeholder="Search" />
+        <input
+          type="text"
+          name="searchQuery"
+          id="search-field__input"
+          autocomplete="off"
+          placeholder="Search"
+        />
       </form>
       <div class="theme-switch">
         <label class="theme-switch__light" for="toggle"

@@ -1,10 +1,10 @@
 import lightFormat from 'date-fns/lightFormat';
 
-const articleList = document.querySelector(".card-news__list");
+const articleList = document.querySelector('.card-news__list');
 export function renderCard(news) {
-    const markup = news.map(({id, title, paragraph, img, data, url, category, multimedia}) => {
-
-          return `<li class="card-news__item">
+  const markup = news
+    .map(({ id, title, paragraph, img, data, url, category, multimedia }) => {
+      return `<li class="card-news__item">
           <div class="card-news__ovarlay">
           <img
           src=${img}
@@ -26,16 +26,18 @@ export function renderCard(news) {
         <p class="card-news__text">
           ${paragraph}
         </p>
-        <time class="card-news__time">${lightFormat(new Date(data
-            ), 'dd/MM/yyyy')}</time>
+        <time class="card-news__time">${lightFormat(
+          new Date(data),
+          'dd/MM/yyyy'
+        )}</time>
         <a class="card-news__element" href=${url} target="_blank" rel="noreferrer noopener">Read more</a>
-      </li>`  
-    }).join("");
-    articleList.innerHTML = markup;
-    console.log(news)
-} 
-
-export function cleanCard() {
-    articleList.innerHTML = "";
+      </li>`;
+    })
+    .join('');
+  articleList.innerHTML = markup;
+  console.log(news);
 }
 
+export function cleanCard() {
+  articleList.innerHTML = '';
+}
