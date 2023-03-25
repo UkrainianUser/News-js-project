@@ -2,7 +2,7 @@
 import { save, load } from "./storage";
 
 const FAVORITE_KEY = "favoriteNews";
-
+const READ_KEY = "readNews";
 
 if (load(FAVORITE_KEY)) {
     const favoriteNews = load(FAVORITE_KEY);
@@ -60,3 +60,18 @@ function renderCardFavorite(news) {
     cardFavorite.innerHTML = markup;
     console.log(news)
 } 
+
+cardFavorite.addEventListener("click", handleClickRead);
+function handleClickRead(event) {
+    if (event.target.nodeName !== "A") {
+      return;
+    }
+    const readCardUrl = event.target.dataset.url;
+   
+    const parsedNews = load(FAVORITE_KEY);
+    const parsedReadNews = load(READ_KEY);
+    
+    const readNews = parsedNews.find(option => option.url === readCardUrl);
+    parsedReadNews.push(readNews);
+    save(READ_KEY, parsedReadNews);
+   }
