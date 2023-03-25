@@ -1,5 +1,5 @@
 import "./js/theme-toggle";
-// import './js/mobile-menu';
+import './js/mobile-menu';
 import './js/fetchNews';
 import './js/fetchNewsApi';
 import './js/renderCard';
