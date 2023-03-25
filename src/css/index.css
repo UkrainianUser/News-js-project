@@ -208,6 +208,7 @@ button {
 }
 
 .search-field {
+  position: relative;
   margin-left: auto;
   display: flex;
   align-items: center;
@@ -222,6 +223,26 @@ button {
     margin-bottom: 31px;
     width: 213px;
   }
+
+@media screen and (min-width: 768px) {
+  .search-field {
+    margin-left: 32px;
+    margin-right: 24px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .search-field {
+    margin-left: 147px;
+    margin-right: 147px;
+  }
+}
+
+.search-field__btn {
+  position: absolute;
+  border: none;
+  background-color: #f4f4f4;
+  left: 12px;
+  cursor: pointer;
 }
 @media screen and (min-width: 1279.98px) {
   .search-field {
@@ -237,6 +258,18 @@ button {
   line-height: 1.75;
   letter-spacing: 0.02em;
   color: #111321;
+  opacity: 0.4;
+  border: 1px solid #111321;
+  box-sizing: border-box;
+  border-radius: 20px;
+  padding-left: 48px;
+  width: 173px;
+  height: 31px;
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  #search-field__input {
+    display: block;
   border: none;
   background: none;
   outline: none;
@@ -408,11 +441,17 @@ button {
   color: #111321;
   margin-top: 20px;
   margin-bottom: 20px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  height: 57px;
 }
 @media (min-width: 768px) {
   .card-news__text {
     font-size: 16px;
     line-height: 1.38;
+    height: 66px;
   }
 }
 
@@ -434,7 +473,7 @@ button {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.36;
-  color: #4440F7;
+  color: #4440f7;
   text-decoration: none;
   cursor: pointer;
 }
@@ -589,4 +628,5 @@ button {
   color: #4440F7;
   text-decoration: none;
   cursor: pointer;
-}/*# sourceMappingURL=index.css.map */
+}
+}}
