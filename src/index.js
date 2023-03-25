@@ -8,7 +8,7 @@ import './js/fetchNewsApi';
 import './js/renderCard';
 import './js/storage';
 import './js/pagination';
-
+import './js/mobile-theme-toggle';
 
 import './js/home-page';
 import './js/favorite';
