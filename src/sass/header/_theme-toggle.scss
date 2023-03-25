@@ -3,9 +3,16 @@ body[data-theme="light"] {
 	background-color: $prim-background;
 	color: $prim-text-color;
 
-	& .theme-switch__light {
+    & .theme-switch__light,
+	& .mobile-theme-switch__light {
 		color: $colorsun-icon;
 	}
+    & .logo,
+    & .site-nav__link,
+    & .header__search-btn {
+   	color: $prim-text-color;
+   }
+
 	& .card-news__title,  & .card-news__text {
 		color: $prim-text-color;
 	}
@@ -16,6 +23,10 @@ body[data-theme="light"] {
 
 	& .mobile-menu__link {
 		color: $prim-text-color;
+	}
+    & .mobile-menu__link:hover,
+	& .mobile-menu__link:focus {
+		color: $prim-background;
 	}
 
 	& .mobile-menu__link--current {
@@ -40,10 +51,18 @@ body[data-theme="dark"] {
 	background-color: $dt-background;
 	color: $dt-prim-text-color;
 
-	& .theme-switch__dark {
+	& .theme-switch__dark,
+	& .mobile-theme-switch__dark {
 		color: $colormoon-icon;
 	}
-	& .card-news__title, & .card-news__text {
+
+	& .logo,
+	& .site-nav__link,
+	& .header__search-btn {
+		color: $dt-prim-text-color;
+	}
+	& .card-news__title,
+    & .card-news__text {
 		color: $dt-prim-text-color;
 	}
 
@@ -70,19 +89,26 @@ body[data-theme="dark"] {
 }
 
 .theme-switch {
-	position: absolute;
-	bottom: 18px;
-	left: 16px;
-	display: flex;
-	justify-content: center;
-	align-items: baseline;
+	display: none;
 
 	@media (min-width: $tablet) {
-		position: static;
+		display: flex;
+		justify-content: flex-start;
+		align-items: baseline;
 	}
 }
 
-.theme-switch__light {
+ .mobile-theme-switch {
+ 	display: block;
+ 	position: absolute;
+ 	bottom: 18px;
+ 	left: 16px;
+ 	display: flex;
+ 	justify-content: center;
+ 	align-items: baseline;
+ }
+
+.theme-switch__light, .mobile-theme-switch__light {
 	font-family: $sec-font;
 	font-size: 18px;
 	line-height: 1.33;
@@ -90,14 +116,14 @@ body[data-theme="dark"] {
 
 }
 
-.theme-switch__dark {
+.theme-switch__dark, .mobile-theme-switch__dark {
 	font-family: $sec-font;
 	font-size: 18px;
 	line-height: 1.33;
 	color: $colormoon-icon;
 }
 
-#toggle {
+#toggle, #mobile-toggle {
 	position: relative;
 	width: 40px;
 	height: 20px;
@@ -119,7 +145,7 @@ body[data-theme="dark"] {
 	}
 }
 
-#toggle::before {
+#toggle::before, #mobile-toggle::before {
 	content: "";
 	position: absolute;
 	top: 1px;
@@ -129,12 +155,12 @@ body[data-theme="dark"] {
 	border-radius: 20px;
 	background-color: $accent-background;
 	cursor: pointer;
-	transition: 250ms ease;
+	transition: background-color 250ms ease;
 	// transform: scale(1.1);
 
 }
 
-#toggle:checked::before {
+#toggle:checked::before, #mobile-toggle:checked::before {
 	left: 21px;
 	background-color: $prim-white-color;
 }
