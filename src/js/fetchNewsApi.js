@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 const BASE_URL = 'https://api.nytimes.com/svc/';
 const API_KEY = 'i85kp9c7ncgQOMH4Gfh3mTxFRckIs0gP';
 
@@ -20,7 +22,7 @@ export class FetchNews {
       },
     });
 
-    return results.data.response.docs;
+    return results.data.response;
   }
 
   async fetchCategoriesList() {
@@ -70,6 +72,7 @@ export class FetchNews {
     if (this.page > 1) {
       this.page -= 1;
     }
+
     return;
   }
 

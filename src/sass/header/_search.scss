@@ -1,9 +1,11 @@
 
 .search-field {
+    background-color: transparent;
+    height: 31px;
+    position: relative;
     margin-left: auto;
     display: flex;
     align-items: center;
-    background-color: transparent;
     height: 31px;
 
     @media screen and (min-width: $pre_tablet) {
