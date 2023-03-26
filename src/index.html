@@ -12,7 +12,7 @@
     />
     <link rel="stylesheet" href="./css/index.css" />
     <link rel="stylesheet" href="./css/index.min.css" />
-    
+
     <script type="module" src="./index.js"></script>
   </head>
   <body>
@@ -41,12 +41,21 @@
             </ul>
           </nav>
           <form class="search-field" id="form-field">
-            <button class="search-field__btn" id="form-btn">
+            <button
+              class="button search-field__btn"
+              type="submit"
+              id="form-btn"
+            >
               <svg class="search__icon" width="20" height="20">
                 <use href="./svg/symbol-defs.svg#icon-search"></use>
               </svg>
             </button>
-            <input type="text" id="search-field__input" placeholder="Search" />
+            <input
+              type="text"
+              name="searchQuery"
+              id="search-field__input"
+              placeholder="Search"
+            />
           </form>
           <button
             class="header__burger-btn js-open-menu"
