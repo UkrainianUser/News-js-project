@@ -42,6 +42,12 @@
 // }
 
 .search-field {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    height: 31px;
+
     position: relative;
     display: flex;
     align-items: center;
@@ -146,6 +152,9 @@
     }
 }
 
+.search__icon {
+    fill: $prim-text-color;
+}
 #search-field__input {
     font-family: $sec-font;
     font-weight: 400;

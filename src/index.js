@@ -7,8 +7,8 @@ import "./js/weatherBase";
 import './js/renderCard';
 import './js/storage';
 import './js/pagination';
+import './js/saerchNews';
 
 import './js/home-page';
 import './js/favorite';
 import './js/read';
-
