@@ -5,15 +5,24 @@ import { save, load } from './storage';
 
 const fetchNews = new FetchNews();
 const refs = {
-  searchField: document.querySelector('#form-field'),
+  searchField: document.getElementById('form-field'),
+  searchInput: document.getElementById('search-field__input'),
 };
 const NEWS_KEY = 'newsObject';
 const IMAGE_BASE_URL = 'https://static01.nyt.com/';
+const stylesInput = window.getComputedStyle(refs.searchInput);
+let inputWidth = stylesInput.getPropertyValue('width');
 
 refs.searchField.addEventListener('submit', onSearch);
 
 async function onSearch(e) {
   e.preventDefault();
+
+  inputWidth = await stylesInput.getPropertyValue('width');
+
+  if (Number.parseInt(inputWidth) < 5) {
+    return;
+  }
 
   fetchNews.query = e.currentTarget.elements.searchQuery.value.trim();
 
@@ -42,7 +51,7 @@ async function onSearch(e) {
     const parsedNews = await load(NEWS_KEY);
     renderCard(parsedNews);
 
-    Notify.success(`Hooray! We found ${hits} news.`);
+    Notify.success(`Ok! We found ${hits} news.`);
   } catch (error) {
     Notify.failure(`${error}`);
 
@@ -61,7 +70,7 @@ function normalizeObj(news) {
       multimedia,
       section_name,
     }) => {
-      let imageURL = `https://assets.hellovector.com/product-images/s_5008.jpg`;
+      let imageURL = '';
       if (multimedia.length !== 0) {
         imageURL = `${IMAGE_BASE_URL}${multimedia[0].url}`;
       }
