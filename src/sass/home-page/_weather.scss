@@ -1,12 +1,18 @@
+.weather-container {
+    position: relative;
+}
 .weather {
     position: absolute;
-	right: 0;
+	right: 16px;
     display: flexbox;
-    width: 288px;
-    height: 469px;
+    width: 395px;
+    height: 675px;
     background-color: $accent-color;
+    
         @media (max-width: 768px) {
             position: relative;
+            width: 288px;
+            height: 469px;
     }
 
         &__block {
