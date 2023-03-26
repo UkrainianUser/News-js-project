@@ -1,11 +1,13 @@
-<<<<<<< Updated upstream
-=======
-
 .weather {
-        display: flexbox;
-        width: 288px;
-        height: 469px;
-        background-color: $accent-color;
+    position: absolute;
+	right: 0;
+    display: flexbox;
+    width: 288px;
+    height: 469px;
+    background-color: $accent-color;
+        @media (max-width: 768px) {
+            position: relative;
+    }
 
         &__block {
             display: flex;
@@ -97,5 +99,3 @@
             color: $prim-white-color;
     }
 }
-
->>>>>>> Stashed changes

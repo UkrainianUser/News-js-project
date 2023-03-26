@@ -1,7 +1,24 @@
 .card-news__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
     @media (min-width: 768px) {
         display: flex;
         gap: 30px;
+    }
+}
+
+.card-news__item:nth-child(2){
+    @media (min-width: 1280px) {
+        margin-right: 395px;
+    }
+    @media (max-width: 768px) {
+        margin-right: 0;}
+}
+
+.card-news__item:nth-child(1){
+    @media (max-width: 1278px) {
+        margin-right: 720px;
     }
 }
 
@@ -54,7 +71,6 @@
     position: absolute;
     bottom: 12px;
     right: 8px;
-    width: 126px;
     height: 28px;
     font-family: 'Manrope', sans-serif;
     font-weight: 500;
@@ -73,12 +89,26 @@
     
 }
 
-.card-news__icon {
-    fill:$prim-text-color;
+.card-news__button--add {
+    width: 126px;
 }
 
+.card-news__button--remove {
+    width: 168px;
+}
+
+
+.card-news__icon {
+    fill: $accent-color;
+}
+
+
+// .card-news__icon-favorite {
+//     fill: $accent-color;
+// }
+
 .card-news__title {
-    font-family: 'Manrope', sans-serif;
+    font-family: $prim-font;
     font-weight: 700;
     font-size: 24px;
     line-height: 1.38;
@@ -93,7 +123,7 @@
 }
 
 .card-news__text {
-    font-family: 'Manrope', sans-serif;
+    font-family: $prim-font;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.36;
@@ -101,14 +131,21 @@
     margin-top: 20px;
     margin-bottom: 20px;
 
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    height: 57px;
+
     @media (min-width: 768px) {
         font-size: 16px;
         line-height: 1.38;
+        height: 66px;
     }
 }
 
 .card-news__time {
-    font-family: 'Manrope', sans-serif;
+    font-family: $prim-font;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.36;
@@ -121,12 +158,12 @@
 .card-news__element {
     position: absolute;
     right: 17px;
-    font-family: 'Manrope', sans-serif;
+    font-family: $prim-font;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.36;
-    color: #4440F7;
+    color: $filter-bordercolor;
     text-decoration: none;
     cursor: pointer;
 }

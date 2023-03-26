@@ -1,0 +1,104 @@
+.list {
+    list-style-type: none;
+}
+.link {
+    text-decoration: none;
+}
+.header {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+    @media screen and (min-width: $tablet) {
+        padding-top: 32px;
+        padding-bottom: 28px;
+    }
+
+    @media screen and (min-width: $desktop){
+        padding-top: 28px;
+    }  
+}
+
+.header__wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    font-family: $prim-font;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.4;
+    color: inherit;
+
+    @media (min-width: $tablet) {
+        font-size: 32px;
+        line-height: 1.36;
+    }
+
+    @media(min-width: $desktop) {
+        font-size: 42px;
+        line-height: 1.36;
+    }
+}
+.site-nav {
+    display: flex;
+    align-items: center;
+    
+    @media screen and (min-width: $tablet){
+        gap: 48px;
+    }
+    @media screen and (min-width: $desktop){
+        gap: 100px;
+    } 
+    
+}
+.site-nav__list {
+    display: none;
+  
+    @media screen and (min-width: $tablet){
+        display: flex;
+        gap: 44px;
+    }
+    @media screen and (min-width: $desktop){
+        gap: 69px;
+    } 
+}
+.site-nav__link{
+    color: $prim-text-color;
+    font-family: $prim-font;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.38;
+    position: relative;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.site-nav__link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    display: block;
+    height: 4px;
+    border-radius: 2px;
+    background-color: $accent-background;
+    width: 0%;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.site-nav__link--current::after {
+    width: 100%;
+}
+.site-nav__link:hover::after,
+.site-nav__:focus::after {
+    width: 100%;
+}
+
+.site-nav__link:hover,
+.site-nav__link:focus {
+    color: $accent-background;
+
+}
+.search {
+    width: 288px;
+}
