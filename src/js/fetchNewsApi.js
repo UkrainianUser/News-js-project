@@ -72,6 +72,7 @@ export class FetchNews {
     if (this.page > 1) {
       this.page -= 1;
     }
+
     return;
   }
 

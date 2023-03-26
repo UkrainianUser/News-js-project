@@ -31,7 +31,7 @@ async function onSearch(e) {
 
     if (hits === 0) {
       Notify.failure(
-        'Sorry, there are no images matching your search query. Please try again.'
+        'Sorry, there are no news matching your search query. Please try again.'
       );
       return;
     }
@@ -61,7 +61,7 @@ function normalizeObj(news) {
       multimedia,
       section_name,
     }) => {
-      let imageURL = `https://img.freepik.com/free-vector/internet-network-warning-404-error-page-or-file-not-found-for-web-page_1150-48326.jpg?w=996&t=st=1676297842~exp=1676298442~hmac=6cad659e6a3076ffcb73bbb246c4f7e5e1bf7cee7fa095d67fcced0a51c2405c`;
+      let imageURL = `https://assets.hellovector.com/product-images/s_5008.jpg`;
       if (multimedia.length !== 0) {
         imageURL = `${IMAGE_BASE_URL}${multimedia[0].url}`;
       }
