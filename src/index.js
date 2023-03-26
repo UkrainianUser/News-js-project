@@ -8,7 +8,7 @@ import './js/renderCard';
 import './js/storage';
 import './js/pagination';
 import './js/saerchNews';
-import './js/categories';
+// import './js/categories';
 
 import './js/home-page';
 import './js/favorite';
