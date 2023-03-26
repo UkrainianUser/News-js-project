@@ -496,38 +496,18 @@ body[data-theme=dark] .icon-moon {
 }
 
 .search-field {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
   background-color: transparent;
   height: 31px;
   position: relative;
-  display: flex;
-  align-items: center;
   margin-left: auto;
   display: flex;
   align-items: center;
-  background-color: transparent;
   height: 31px;
-}
-@media screen and (min-width: 768px) {
-  .search-field {
-    margin-left: 32px;
-    margin-right: 24px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .search-field {
-    margin-left: 147px;
-    margin-right: 147px;
-  }
 }
 @media screen and (min-width: 767.98px) {
   .search-field {
     border: 1px solid #111321;
     border-radius: 20px;
-    margin-top: 44px;
-    margin-bottom: 31px;
     width: 213px;
   }
 }
@@ -535,8 +515,6 @@ body[data-theme=dark] .icon-moon {
   .search-field {
     margin: 0 auto;
     width: 288px;
-    margin-top: 51px;
-    margin-bottom: 31px;
   }
 }
 .search-field input {
@@ -548,6 +526,7 @@ body[data-theme=dark] .icon-moon {
   border: none;
   background: none;
   outline: none;
+  opacity: 0.4;
 }
 .search-field input:focus {
   color: #111321;
@@ -580,20 +559,18 @@ body[data-theme=dark] .icon-moon {
     border-radius: 20px;
   }
   .search-field:hover input {
-    width: 125px;
+    width: 173px;
     padding: 8px 0;
   }
   .search-field:hover .search-field__btn {
-    padding: 8px 16px 5px 12px;
+    padding: 4px 16px 2px 12px;
   }
 }
 
 .search-field__btn {
-  position: absolute;
   border: none;
-  background-color: #f4f4f4;
-  left: 12px;
-  cursor: pointer;
+  border-radius: 20px;
+  padding: 0;
 }
 @media screen and (max-width: 767.98px) {
   .search-field__btn {
@@ -603,44 +580,11 @@ body[data-theme=dark] .icon-moon {
 }
 @media screen and (min-width: 767.98px) {
   .search-field__btn {
-    padding: 10px 19px 8px 14px;
+    padding: 4px 16px 2px 12px;
   }
 }
 
 .search__icon {
-  fill: #111321;
-}
-
-#search-field__input {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.75;
-  letter-spacing: 0.02em;
-  color: #111321;
-  opacity: 0.4;
-  border: 1px solid #111321;
-  box-sizing: border-box;
-  border-radius: 20px;
-  padding-left: 48px;
-  width: 173px;
-  height: 31px;
-  display: none;
-}
-@media screen and (min-width: 768px) {
-  #search-field__input {
-    display: block;
-    font-size: 14px;
-    line-height: 1.71;
-    width: 213px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  #search-field__input {
-    width: 288px;
-  }
-}
-#search-field__input .search__icon {
   fill: #111321;
 }
 
