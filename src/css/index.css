@@ -496,6 +496,11 @@ body[data-theme=dark] .icon-moon {
 }
 
 .search-field {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  height: 31px;
   position: relative;
   display: flex;
   align-items: center;
@@ -600,6 +605,10 @@ body[data-theme=dark] .icon-moon {
   .search-field__btn {
     padding: 10px 19px 8px 14px;
   }
+}
+
+.search__icon {
+  fill: #111321;
 }
 
 #search-field__input {
@@ -968,6 +977,7 @@ body[data-theme=dark] .icon-moon {
 
 .card-news__ovarlay {
   position: relative;
+  overflow: hidden;
 }
 
 .card-news__category {
