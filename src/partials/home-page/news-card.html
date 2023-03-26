@@ -8,7 +8,8 @@
   </head>
   <body> -->
 <section class="card-news">
-  <div class="container">
+  <div class="container weather-container">
+    <div class="weather"></div>
     <ul class="card-news__list">
       <!-- <li class="card-news__item">
         <div class="card-news__ovarlay">
@@ -46,10 +47,13 @@
             />
           </picture>
           <p class="card-news__category">Job searching</p>
-          <button class="card-news__button" type="button">
+          <button
+            class="card-news__button card-news__button--add"
+            type="button"
+          >
             Add to favorite
             <svg class="card-news__icon" width="16" height="16">
-              <use href="./svg/symbol-defs.svg#icon-heart-not-action"></use>
+              <use href="./svg/symbol-defs.svg#icon-icons_heart"></use>
             </svg>
           </button>
         </div>
@@ -61,7 +65,13 @@
           yourself with the job prospects offered by these...
         </p>
         <time class="card-news__time">20/02/2021</time>
-        <a class="card-news__element" href="" target="_blank" rel="noreferrer noopener">Read more</a>
+        <a
+          class="card-news__element"
+          href=""
+          target="_blank"
+          rel="noreferrer noopener"
+          >Read more</a
+        >
       </li>
       <li class="card-news__item">
         <div class="card-news__ovarlay">
@@ -99,12 +109,15 @@
             />
           </picture>
           <p class="card-news__category">Job searching</p>
-          <button class="card-news__button" type="button">
-            Add to favorite -->
-      <!-- <svg class="card-news__icon" width="16" height="16">
-                  <use href="./images/icons.svg#icon-heart"></use>
-                </svg> -->
-      <!-- </button>
+          <button
+            class="card-news__button card-news__button--remove"
+            type="button"
+          >
+            Remove from favorite
+            <svg class="card-news__icon" width="16" height="16">
+              <use href="./svg/symbol-defs.svg#icon-heart"></use>
+            </svg>
+          </button>
         </div>
         <h2 class="card-news__title">
           8 tips for passing an online interview that will help you get a job
@@ -114,8 +127,14 @@
           yourself with the job prospects offered by these...
         </p>
         <time class="card-news__time">20/02/2021</time>
-        <a class="card-news__element" href="" target="_blank" rel="noreferrer noopener">Read more</a>
-      </li>
+        <a
+          class="card-news__element"
+          href=""
+          target="_blank"
+          rel="noreferrer noopener"
+          >Read more</a
+        >
+      </li> -->
     </ul>
   </div>
 </section>

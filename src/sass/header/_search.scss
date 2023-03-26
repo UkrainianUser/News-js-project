@@ -48,6 +48,26 @@
     background-color: transparent;
     height: 31px;
 
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    height: 31px;
+    
+    @media screen and (min-width: 768px) {
+        margin-left: 32px;
+        margin-right: 24px;
+
+    }
+        @media screen and (min-width: 1200px) {
+            margin-left: 147px;
+            margin-right: 147px;
+    
+        }
+
     @media screen and (min-width: $pre_tablet) {
         border: 1px solid $prim-text-color;
         border-radius: 20px;
@@ -116,6 +136,12 @@
 }
 
 .search-field__btn {
+    position: absolute;
+    border: none;
+    background-color: $prim-background;
+    left: 12px;
+    cursor: pointer;
+    
     @media screen and (max-width: $pre_tablet) {
         color: $prim-text-color;
         transition: 0.4s;
@@ -129,3 +155,33 @@
 .search__icon {
     fill: $prim-text-color;
 }
+#search-field__input {
+    font-family: $sec-font;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.75;
+    letter-spacing: 0.02em;
+    color: $prim-text-color;
+    opacity: 0.4;
+    border: 1px solid $prim-text-color;
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding-left: 48px;
+    width: 173px;
+    height: 31px;
+    display: none;
+
+    @media screen and (min-width: 768px) {
+        display: block;
+        font-size: 14px;
+        line-height: 1.71;
+        width: 213px;
+
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 288px;
+    }
+.search__icon {
+    fill: $prim-text-color;
+}}
