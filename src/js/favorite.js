@@ -3,13 +3,12 @@ import { save, load } from './storage';
 
 const FAVORITE_KEY = 'favoriteNews';
 const READ_KEY = 'readNews';
+const cardFavorite = document.querySelector('.card-favorite__list');
 
 if (load(FAVORITE_KEY)) {
   const favoriteNews = load(FAVORITE_KEY);
   renderCardFavorite(favoriteNews);
 }
-
-const cardFavorite = document.querySelector('.card-favorite__list');
 
 cardFavorite.addEventListener('click', handleClickFavoriteBtn);
 
