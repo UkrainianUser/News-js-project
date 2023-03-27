@@ -1,11 +1,13 @@
 import weather, { getWeather }  from "./weather";
 
+
 const weatherForm = document.querySelector('.card-news__list');
 const numberNews = document.querySelector('.card-news__number2');
-const windowInnerWidth = window.innerWidth
+const date = new Date();
 
  async function addWeather() {
   try {
+    const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' }
     const response = await getWeather();
     const data = await response.data;
     const createMarkup = `<li class = "weather">
@@ -15,7 +17,7 @@ const windowInnerWidth = window.innerWidth
       <use href="/symbol-defs.33050382.svg#icon-carbon_location-filled"></use>
     </svg>${data.name}</p></div></div>
       <img class="weather__icon" src="https://openweathermap.org/img/wn/${data.weather[0].icon}.png" alt="${data.weather[0].description}">
-      <p class="weather__date">${new Date(data.dt*1000).toDateString()}</p></li>`
+      <p class="weather__date">${new Date(data.dt*1000).toLocaleDateString('en-GB', options)}</p></li>`
         
           return weatherForm.insertAdjacentHTML('afterbegin', createMarkup);  
   } catch (error) {
