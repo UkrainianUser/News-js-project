@@ -35,8 +35,8 @@ function renderCardFavorite(news) {
           <img
           src=${img}
           alt="Businesswoman"
-          width="288"
-          height="395"
+          width="395px"
+          height="395px"
         />
         <p class="card-favorite__category">${category}</p>
         <button data-id=${id} class="card-favorite__button" type="button">
