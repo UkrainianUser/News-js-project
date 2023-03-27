@@ -1,4 +1,3 @@
-
 import './js/home-page';
 import './js/theme-toggle';
 import './js/mobile-menu';
