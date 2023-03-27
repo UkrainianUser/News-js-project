@@ -8,5 +8,5 @@ import './js/renderCard';
 import './js/storage';
 import './js/pagination';
 
-import './js/read';
-import './js/favorite';
+// import './js/read';
+// import './js/favorite';

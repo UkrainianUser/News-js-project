@@ -28,7 +28,8 @@ function handleClickFavoriteBtn(event) {
 }
 
 function renderCardFavorite(news) {
-  const markup = news
+  const normalizeNews = news.filter((value) => value);
+  const markup = normalizeNews
     .map(({ id, title, paragraph, img, data, url, category, multimedia }) => {
       return `<li class="card-favorite__item">
           <div class="card-favorite__ovarlay">
@@ -56,7 +57,7 @@ function renderCardFavorite(news) {
           new Date(data),
           'dd/MM/yyyy'
         )}</time>
-        <a class="card-favorite__element" href=${url} target="_blank" rel="noreferrer noopener">Read more</a>
+        <a data-url=${url} class="card-favorite__element" href=${url} target="_blank" rel="noreferrer noopener">Read more</a>
       </li>`;
     })
     .join('');
@@ -71,10 +72,11 @@ function handleClickRead(event) {
   }
   const readCardUrl = event.target.dataset.url;
 
+  if (load(FAVORITE_KEY) && load(READ_KEY)) {
   const parsedNews = load(FAVORITE_KEY);
   const parsedReadNews = load(READ_KEY);
 
   const readNews = parsedNews.find(option => option.url === readCardUrl);
   parsedReadNews.push(readNews);
-  save(READ_KEY, parsedReadNews);
+  save(READ_KEY, parsedReadNews);}
 }

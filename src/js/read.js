@@ -7,21 +7,21 @@ import { save, load } from './storage';
 const READ_KEY = 'readNews';
 const FAVORITE_KEY = 'favoriteNews';
 
-const dateWrapper = document.querySelector('.date__wrapper');
-getReadNews();
+const dateWrapper = document.querySelector('.card-news__list');
 function getReadNews() {
   if (load(READ_KEY).length) {
-    const readNews = load(READ_KEY);
-    const rangeDate = getSortDate(readNews);
-    const readObj = rangeDate.reduce((obj, date) => {
-      obj[date] = readNews.filter(value => {
-        return isSameDay(new Date(date), new Date(value.data));
-      });
-      return obj;
-    }, {});
-
-    renderCardRead(readObj);
-  }
+      const readNews = load(READ_KEY);
+      const normalizeNews = readNews.filter((value) => value);
+      const rangeDate = getSortDate(readNews);
+      console.log(rangeDate);
+      const readObj = rangeDate.reduce((obj, date) => {
+        obj[date] = normalizeNews.filter((value) => {
+          return isSameDay(new Date(date), new Date(value.data));
+        });
+        return obj;
+      }, {});
+      renderCardRead(readObj);
+   }
 }
 
 function getSortDate(news) {
