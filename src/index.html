@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./css/index.css" />
     <link rel="stylesheet" href="./css/index.min.css" />
   </head>
-  <body>
+  <body data-theme="light">
     <!-- ❗️❗️❗️ Add partials like so for every page -->
     <header class="header">
       <div class="container">
@@ -102,9 +102,78 @@
 
         <include src="./partials/home-page/pagination.html"></include>
       </div>
-      <include src="./partials/mobile-menu.html"></include>
     </main>
-
+    <!-- Mobile menu  -->
+    <div class="mobile-menu js-menu-container" id="mobile-menu">
+      <div class="mobile-menu__topwrapper">
+        <a class="header__logo mobile-menu__logo" href="./index.html">News</a>
+        <button class="mobile-menu__close-button js-close-menu">
+          <svg class="mobile-menu__icon-close" width="24" height="24">
+            <use href="./svg/symbol-defs.svg#icon-close_menu"></use>
+          </svg>
+        </button>
+      </div>
+      <nav class="mobile-menu__nav">
+        <ul class="mobile-menu__list">
+          <li class="mobile-menu__item">
+            <a
+              class="mobile-menu__link mobile-menu__link--current"
+              href="./index.html"
+              ><svg class="home-icon" width="32" height="32">
+                <use href="./svg/symbol-defs.svg#icon-home"></use>
+              </svg>
+              Home
+              <span class="mobile-menu__arrow"
+                ><svg class="arrow-right-icon" width="24" height="24">
+                  <use href="./svg/symbol-defs.svg#icon-arrow-right"></use></svg
+              ></span>
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="./favorite.html"
+              ><svg class="favorite-icon" width="32" height="32">
+                <use href="./svg/symbol-defs.svg#icon-favorite"></use></svg
+              >Favorite
+              <span class="mobile-menu__arrow"
+                ><svg class="arrow-right-icon" width="24" height="24">
+                  <use href="./svg/symbol-defs.svg#icon-arrow-right"></use></svg
+              ></span>
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="./read.html"
+              ><svg class="read-icon" width="32" height="32">
+                <use href="./svg/symbol-defs.svg#icon-read"></use></svg
+              >Read
+              <span class="mobile-menu__arrow"
+                ><svg class="arrow-right-icon" width="24" height="24">
+                  <use href="./svg/symbol-defs.svg#icon-arrow-right"></use></svg
+              ></span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="mobile-theme-switch">
+        <label class="mobile-theme-switch__light" for="mobile-toggle"
+          ><span class="theme-word">Light</span
+          ><svg class="icon-sun" width="21" height="21">
+            <use href="./svg/symbol-defs.svg#icon-sun"></use></svg
+        ></label>
+        <input id="mobile-toggle" type="checkbox" />
+        <label class="mobile-theme-switch__dark" for="mobile-toggle"
+          ><span class="theme-word">Dark</span
+          ><svg class="icon-moon" width="21" height="21">
+            <use href="./svg/symbol-defs.svg#icon-moon"></use>
+          </svg>
+        </label>
+      </div>
+    </div>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+      integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+      crossorigin="anonymous"
+    ></script>
     <script type="module" src="./index.js"></script>
   </body>
 </html>
