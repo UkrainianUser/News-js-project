@@ -363,6 +363,9 @@ body[data-theme=light] .mobile-menu__link:hover, body[data-theme=light] .mobile-
 body[data-theme=light] .mobile-menu__link--current {
   color: #f4f4f4;
 }
+body[data-theme=light] input[placeholder] {
+  color: rgba(17, 19, 33, 0.4);
+}
 body[data-theme=light] .mobile-menu__icon-close, body[data-theme=light] .icon-burger-menu {
   fill: #111321;
 }
@@ -371,6 +374,9 @@ body[data-theme=light] .icon-sun {
 }
 body[data-theme=light] .icon-moon {
   fill: #5F6775;
+}
+body[data-theme=light] .search__icon {
+  fill: #111321;
 }
 
 body[data-theme=dark] {
@@ -392,6 +398,9 @@ body[data-theme=dark] .mobile-menu {
 body[data-theme=dark] .mobile-menu__link {
   color: #f4f4f4;
 }
+body[data-theme=dark] input[placeholder] {
+  color: rgba(244, 244, 244, 0.4);
+}
 body[data-theme=dark] .mobile-menu__icon-close, body[data-theme=dark] .icon-burger-menu {
   fill: #f4f4f4;
 }
@@ -400,6 +409,9 @@ body[data-theme=dark] .icon-sun {
 }
 body[data-theme=dark] .icon-moon {
   fill: #4b48db;
+}
+body[data-theme=dark] .search__icon {
+  fill: #f4f4f4;
 }
 
 .theme-switch {
@@ -410,6 +422,11 @@ body[data-theme=dark] .icon-moon {
     display: flex;
     justify-content: flex-start;
     align-items: baseline;
+  }
+}
+@media (min-width: 1280px) {
+  .theme-switch {
+    align-items: center;
   }
 }
 
@@ -500,18 +517,20 @@ body[data-theme=dark] .icon-moon {
   height: 31px;
   position: relative;
   margin-left: auto;
+  margin-right: 14px;
   display: flex;
   align-items: center;
   height: 31px;
 }
-@media screen and (min-width: 767.98px) {
+@media screen and (min-width: 768px) {
   .search-field {
     border: 1px solid #111321;
     border-radius: 20px;
+    margin-right: 24px;
     width: 213px;
   }
 }
-@media screen and (min-width: 1279.98px) {
+@media screen and (min-width: 1280px) {
   .search-field {
     margin: 0 auto;
     width: 288px;
@@ -568,9 +587,13 @@ body[data-theme=dark] .icon-moon {
 }
 
 .search-field__btn {
-  border: none;
-  border-radius: 20px;
+  display: flex;
+  align-items: center;
   padding: 0;
+  margin-right: 14px;
+  border: none;
+  background-color: transparent;
+  border-radius: 20px;
 }
 @media screen and (max-width: 767.98px) {
   .search-field__btn {
@@ -735,6 +758,9 @@ body[data-theme=light] .mobile-menu__link:hover, body[data-theme=light] .mobile-
 body[data-theme=light] .mobile-menu__link--current {
   color: #f4f4f4;
 }
+body[data-theme=light] input[placeholder] {
+  color: rgba(17, 19, 33, 0.4);
+}
 body[data-theme=light] .mobile-menu__icon-close, body[data-theme=light] .icon-burger-menu {
   fill: #111321;
 }
@@ -743,6 +769,9 @@ body[data-theme=light] .icon-sun {
 }
 body[data-theme=light] .icon-moon {
   fill: #5F6775;
+}
+body[data-theme=light] .search__icon {
+  fill: #111321;
 }
 
 body[data-theme=dark] {
@@ -764,6 +793,9 @@ body[data-theme=dark] .mobile-menu {
 body[data-theme=dark] .mobile-menu__link {
   color: #f4f4f4;
 }
+body[data-theme=dark] input[placeholder] {
+  color: rgba(244, 244, 244, 0.4);
+}
 body[data-theme=dark] .mobile-menu__icon-close, body[data-theme=dark] .icon-burger-menu {
   fill: #f4f4f4;
 }
@@ -772,6 +804,9 @@ body[data-theme=dark] .icon-sun {
 }
 body[data-theme=dark] .icon-moon {
   fill: #4b48db;
+}
+body[data-theme=dark] .search__icon {
+  fill: #f4f4f4;
 }
 
 .theme-switch {
@@ -782,6 +817,11 @@ body[data-theme=dark] .icon-moon {
     display: flex;
     justify-content: flex-start;
     align-items: baseline;
+  }
+}
+@media (min-width: 1280px) {
+  .theme-switch {
+    align-items: center;
   }
 }
 
@@ -869,6 +909,7 @@ body[data-theme=dark] .icon-moon {
 
 .card-news__list {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 32px;
 }
@@ -879,20 +920,9 @@ body[data-theme=dark] .icon-moon {
   }
 }
 
-@media (min-width: 1280px) {
-  .card-news__item:nth-child(2) {
-    margin-right: 395px;
-  }
-}
 @media (max-width: 768px) {
   .card-news__item:nth-child(2) {
     margin-right: 0;
-  }
-}
-
-@media (max-width: 1278px) {
-  .card-news__item:nth-child(1) {
-    margin-right: 720px;
   }
 }
 
@@ -1140,28 +1170,35 @@ body[data-theme=dark] .icon-moon {
   background-color: transparent;
 }
 
-.weather-container {
-  position: relative;
-}
-
 .weather {
-  position: absolute;
-  right: 16px;
   display: flexbox;
-  width: 395px;
-  height: 675px;
+  flex-wrap: wrap;
+  width: 288px;
+  height: 469px;
   background-color: #4440f6;
 }
-@media (max-width: 768px) {
+@media (min-width: 769px) and (max-width: 1279px) {
   .weather {
-    position: relative;
-    width: 288px;
-    height: 469px;
+    width: 353px;
+    height: 675px;
+  }
+}
+@media (min-width: 1280px) {
+  .weather {
+    width: 395px;
+    height: 675px;
   }
 }
 .weather__block {
   display: flex;
   flex-wrap: nowrap;
+}
+@media (min-width: 769px) {
+  .weather__block {
+    margin-top: 45px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 .weather__number {
   display: inline-flex;
@@ -1177,6 +1214,13 @@ body[data-theme=dark] .icon-moon {
   color: #ffffff;
   border-right: 1px solid #ffffff;
 }
+@media (min-width: 769px) {
+  .weather__number {
+    width: 95px;
+    height: 75px;
+    font-size: 64px;
+  }
+}
 .weather__location {
   display: inline-flex;
   flex-wrap: wrap;
@@ -1184,12 +1228,22 @@ body[data-theme=dark] .icon-moon {
   margin-left: 11px;
   margin-right: 5px;
 }
+@media (min-width: 769px) {
+  .weather__location {
+    margin-left: 8px;
+  }
+}
 .weather__title {
   font-family: Roboto;
   font-weight: 400;
   font-size: 24px;
   line-height: 1.17;
   color: #ffffff;
+}
+@media (min-width: 769px) {
+  .weather__title {
+    font-size: 36px;
+  }
 }
 .weather__city {
   display: flex;
@@ -1206,6 +1260,13 @@ body[data-theme=dark] .icon-moon {
   font-size: 14px;
   line-height: 1.49;
 }
+@media (min-width: 769px) {
+  .weather__city {
+    width: 177px;
+    height: 42px;
+    font-size: 20px;
+  }
+}
 .weather__svg {
   fill: #ffffff;
 }
@@ -1216,6 +1277,13 @@ body[data-theme=dark] .icon-moon {
   margin-top: 51px;
   margin-left: auto;
   margin-right: auto;
+}
+@media (min-width: 769px) {
+  .weather__icon {
+    width: 165px;
+    height: 156px;
+    margin-top: 91px;
+  }
 }
 .weather__date {
   display: flex;
@@ -1233,6 +1301,14 @@ body[data-theme=dark] .icon-moon {
   font-size: 28px;
   line-height: 1.17;
   color: #ffffff;
+}
+@media (min-width: 769px) {
+  .weather__date {
+    margin-top: 90px;
+    width: 199px;
+    height: 84px;
+    font-size: 36px;
+  }
 }
 
 .pagination {
