@@ -44,11 +44,34 @@ export class FetchNews {
       {
         params: {
           'api-key': API_KEY,
+          fl: 'uri,title,abstract,thumbnail_standard,published_date,url,multimedia,section',
         },
       }
     );
 
-    return response.data.results;
+    return response.data.results.map(
+      ({
+        uri,
+        title,
+        abstract,
+        thumbnail_standard,
+        published_date,
+        url,
+        multimedia,
+        section,
+      }) => {
+        return {
+          id: uri,
+          title,
+          paragraph: abstract,
+          img: thumbnail_standard,
+          data: published_date,
+          url,
+          multimedia,
+          category: section,
+        };
+      }
+    );
   }
 
   async fetchByMostPopular() {
