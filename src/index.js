@@ -1,4 +1,5 @@
 
+import './js/home-page';
 import './js/theme-toggle';
 import './js/mobile-menu';
 import './js/fetchNews';
@@ -10,6 +11,5 @@ import './js/pagination';
 import './js/saerchNews';
 import './js/categories';
 
-import './js/home-page';
-import './js/favorite';
 import './js/read';
+import './js/favorite';
