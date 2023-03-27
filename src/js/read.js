@@ -8,6 +8,9 @@ const READ_KEY = 'readNews';
 const FAVORITE_KEY = 'favoriteNews';
 
 const dateWrapper = document.querySelector('.date__wrapper');
+
+getReadNews();
+
 function getReadNews() {
   if (load(READ_KEY).length) {
       const readNews = load(READ_KEY);
