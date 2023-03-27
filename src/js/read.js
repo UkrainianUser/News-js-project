@@ -25,8 +25,8 @@ function getReadNews() {
 }
 
 function getSortDate(news) {
-  const dateArray = news.map(item => {
-    return new Date(item.data);
+  const dateArray = news?.map(item => {
+    return new Date(item?.data);
   });
   console.log(dateArray);
 
