@@ -33,6 +33,10 @@ body[data-theme="light"] {
 		color: $prim-background;
 	}
 
+	& input[placeholder]{
+		color: $lt-placeholder-color;
+	}
+
 	& .mobile-menu__icon-close,
 	& .icon-burger-menu {
 		fill: $prim-text-color;
@@ -44,6 +48,10 @@ body[data-theme="light"] {
 
 	& .icon-moon {
 		fill: $colormoon-icon;
+	}
+
+	& .search__icon {
+		fill: $prim-text-color;
 	}
 }
 
@@ -74,6 +82,10 @@ body[data-theme="dark"] {
 		color: $dt-prim-text-color;
 	}
 
+	& input[placeholder] {
+		color: $dt-placeholder-color;
+	}
+
 	& .mobile-menu__icon-close,
 	& .icon-burger-menu {
 		fill: $dt-prim-text-color;
@@ -86,6 +98,9 @@ body[data-theme="dark"] {
 	& .icon-moon {
 		fill: $colorsun-icon;
 	}
+	& .search__icon {
+		fill: $dt-prim-text-color;
+	}
 }
 
 .theme-switch {
@@ -95,6 +110,10 @@ body[data-theme="dark"] {
 		display: flex;
 		justify-content: flex-start;
 		align-items: baseline;
+	}
+
+	@media(min-width: $desktop){
+		align-items: center;
 	}
 }
 
