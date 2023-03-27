@@ -1,6 +1,11 @@
 ::-webkit-scrollbar {
     display: none;
-  }
+}
+
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+}
 
 .all-container-for-categories-menu {
     display: flex;
