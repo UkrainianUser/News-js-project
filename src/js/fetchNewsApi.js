@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const BASE_URL = 'https://api.nytimes.com/svc/';
-const API_KEY = 'i85kp9c7ncgQOMH4Gfh3mTxFRckIs0gP';
+const API_KEY = 'UPfW6vgRuPuGF8dWeumSDLnq86AeLhG1';
 
 export class FetchNews {
   constructor() {
@@ -38,9 +38,50 @@ export class FetchNews {
     return response.data.results;
   }
 
+  // async fetchByCategory() {
+  //   const response = await axios.get(
+  //     `${BASE_URL}news/v3/content/all/${encodeURIComponent(
+  //       this.category
+  //     )}.json`,
+
+  //     {
+  //       params: {
+  //         'api-key': API_KEY,
+  //         fl: 'uri,title,abstract,thumbnail_standard,published_date,url,multimedia,section',
+  //       },
+  //     }
+  //   );
+
+  //   return response.data.results.map(
+  //     ({
+  //       uri,
+  //       title,
+  //       abstract,
+  //       thumbnail_standard,
+  //       published_date,
+  //       url,
+  //       multimedia,
+  //       section,
+  //     }) => {
+  //       return {
+  //         id: uri,
+  //         title,
+  //         paragraph: abstract,
+  //         img: thumbnail_standard,
+  //         data: published_date,
+  //         url,
+  //         multimedia,
+  //         category: section,
+  //       };
+  //     }
+  //   );
+  // }
+
   async fetchByCategory() {
     const response = await axios.get(
-      `${BASE_URL}news/v3/content/all/${this.category}.json`,
+      `${BASE_URL}news/v3/content/all/${encodeURIComponent(
+        this.category
+      )}.json`,
       {
         params: {
           'api-key': API_KEY,
@@ -49,29 +90,50 @@ export class FetchNews {
       }
     );
 
-    return response.data.results.map(
-      ({
-        uri,
-        title,
-        abstract,
-        thumbnail_standard,
-        published_date,
-        url,
-        multimedia,
-        section,
-      }) => {
-        return {
-          id: uri,
+    return response.data.results
+      .filter(
+        ({
+          uri,
           title,
-          paragraph: abstract,
-          img: thumbnail_standard,
-          data: published_date,
+          abstract,
+          thumbnail_standard,
+          published_date,
           url,
           multimedia,
-          category: section,
-        };
-      }
-    );
+          section,
+        }) =>
+          uri &&
+          title &&
+          abstract &&
+          thumbnail_standard &&
+          published_date &&
+          url &&
+          multimedia &&
+          section
+      )
+      .map(
+        ({
+          uri,
+          title,
+          abstract,
+          thumbnail_standard,
+          published_date,
+          url,
+          multimedia,
+          section,
+        }) => {
+          return {
+            id: uri,
+            title,
+            paragraph: abstract,
+            img: thumbnail_standard,
+            data: published_date,
+            url,
+            multimedia,
+            category: section,
+          };
+        }
+      );
   }
 
   async fetchByMostPopular() {
