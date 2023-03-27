@@ -32,7 +32,7 @@ export function renderCard(news) {
           new Date(data),
           'dd/MM/yyyy'
         )}</time>
-        <a class="card-news__element" href=${url} target="_blank" rel="noreferrer noopener">Read more</a>
+        <a data-url=${url} class="card-news__element" href=${url} target="_blank" rel="noreferrer noopener">Read more</a>
       </li>`;
     })
     .join('');
