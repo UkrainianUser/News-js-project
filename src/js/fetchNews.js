@@ -15,7 +15,7 @@ export async function fetchNews() {
         "api-key": API_KEY_NEWS,
       }
     });
-      console.log(response.data);
+      // console.log(response.data);
       const newsObject = response.data.results.map(({uri, title, abstract, thumbnail_standard, published_date, url, multimedia, section}) => {
         return {
             id: uri,
@@ -28,7 +28,7 @@ export async function fetchNews() {
             category: section
         }
       });
-      console.log(newsObject);
+      // console.log(newsObject);
       save(NEWS_KEY, newsObject);
 
     } catch (error) {
