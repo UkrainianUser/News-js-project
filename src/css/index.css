@@ -487,10 +487,10 @@ body[data-theme=dark] .search-field {
 #toggle::before, #mobile-toggle::before {
   content: "";
   position: absolute;
-  top: 1px;
-  left: 1px;
-  width: 18px;
-  height: 18px;
+  top: 0;
+  left: 0;
+  width: 17px;
+  height: 17px;
   border-radius: 20px;
   background-color: #4b48db;
   cursor: pointer;
@@ -887,10 +887,10 @@ body[data-theme=dark] .search-field {
 #toggle::before, #mobile-toggle::before {
   content: "";
   position: absolute;
-  top: 1px;
-  left: 1px;
-  width: 18px;
-  height: 18px;
+  top: 0;
+  left: 0;
+  width: 17px;
+  height: 17px;
   border-radius: 20px;
   background-color: #4b48db;
   cursor: pointer;
