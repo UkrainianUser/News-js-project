@@ -555,6 +555,7 @@ body[data-theme=dark] .search-field {
 }
 .search-field input:focus {
   color: #111321;
+  opacity: 1;
 }
 .search-field input:-webkit-autofill, .search-field input:-webkit-autofill:hover, .search-field input:-webkit-autofill:focus, .search-field input:-webkit-autofill:active {
   -webkit-transition: background-color 9999s, color 9999s;

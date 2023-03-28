@@ -39,7 +39,8 @@
         
 
         &:focus {
-            color: $prim-text-color
+            color: $prim-text-color;
+            opacity: 1;
         }
 
         &:autofill,
