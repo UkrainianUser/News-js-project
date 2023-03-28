@@ -126,7 +126,7 @@ export class FetchNews {
             id: uri,
             title,
             paragraph: abstract,
-            img: thumbnail_standard,
+            img: multimedia ? multimedia[1].url : thumbnail_standard,
             data: published_date,
             url,
             multimedia,
