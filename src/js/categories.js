@@ -1,6 +1,7 @@
 import { FetchNews } from './fetchNewsApi';
 import { fetchNews } from './fetchNews';
 import { renderCard } from './renderCard';
+import { addWeather } from './weatherBase';
 
 const newsAPI = new FetchNews();
 
@@ -62,6 +63,7 @@ function createLink(category) {
       .fetchByCategory()
       .then(articles => {
         plug.classList.add('is-hidden');
+        addWeather();
         renderCard(articles);
       })
       .catch(error => {
