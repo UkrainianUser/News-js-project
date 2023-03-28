@@ -40,7 +40,7 @@ export function renderCard(articles) {
     })
     .join('');
 
-  articleList.innerHTML = markup;
+  articleList.insertAdjacentHTML('beforeend', markup);
   console.log(articles);
 
 }

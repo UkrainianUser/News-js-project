@@ -2,8 +2,6 @@ import weather, { getWeather }  from "./weather";
 
 
 const weatherForm = document.querySelector('.card-news__list');
-const numberNews = document.querySelector('.card-news__number2');
-const date = new Date();
 
  async function addWeather() {
   try {
