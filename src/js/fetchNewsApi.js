@@ -35,7 +35,7 @@ export class FetchNews {
       }
     );
 
-    return response.data.results;
+    return response.data;
   }
 
   // async fetchByCategory() {

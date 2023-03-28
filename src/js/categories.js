@@ -7,23 +7,65 @@ const newsAPI = new FetchNews();
 const categoriesContainer = document.getElementById('categories-container');
 const menuContainer = document.getElementById('menu-container');
 const dropbtn = document.querySelector('.dropbtn');
+const mediaQueryTablet = window.matchMedia('(max-width: 1278px)');
+const mediaQueryMobile = window.matchMedia('(max-width: 767px)');
+let linkCount;
+let resizeTimeout;
 const plug = document.querySelector('.wrapper-plug');
+
 fetchNewsCategory();
+test();
+
+function test() {
+  function handleScreenSizeChange(e) {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      console.log('Screen size changed');
+      if (mediaQueryMobile.matches) {
+        // Код для мобильной версии
+        linkCount = 0;
+
+        console.log('000');
+      } else if (mediaQueryTablet.matches) {
+        // Код для планшетной версии
+        updateButtons();
+        linkCount = 3;
+
+        console.log('333');
+      } else {
+        // Код для большой версии
+        linkCount = 5;
+      }
+
+      updateButtons();
+    }, 250);
+  }
+
+  window.addEventListener('resize', handleScreenSizeChange);
+
+  linkCount = handleScreenSizeChange();
+
+  function updateButtons() {
+    categoriesContainer.innerHTML = '';
+    const categories = Array.from(categoriesContainer.children).map(button =>
+      button.getAttribute('name')
+    );
+    categories.slice(0, linkCount).forEach(category => {
+      const link = createLink(category);
+      categoriesContainer.appendChild(link);
+    });
+  }
+
+  // window.addEventListener('change', handleScreenSizeChange);
+}
 
 function fetchNewsCategory() {
-  return fetch(
-    `https://api.nytimes.com/svc/news/v3/content/section-list.json?api-key=UPfW6vgRuPuGF8dWeumSDLnq86AeLhG1`
-  )
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
+  return newsAPI
+    .fetchCategoriesList()
     .then(data => {
-      // Создаем кнопки для первых 5 категорий
+      // Создаем ссылки для первых 5 категорий
       const categories = data.results
-        .slice(0, 5)
+        .slice(0, linkCount)
         .map(category => category.section);
 
       const buttonCategories = Array.from(categoriesContainer.children).map(
@@ -40,8 +82,6 @@ function fetchNewsCategory() {
         categoriesContainer.appendChild(link);
       });
       createMenu(categories, newCategories);
-
-      // menuContainer.appendChild(menu);
     })
     .catch(error => {
       console.error(error);
@@ -145,5 +185,3 @@ window.onclick = function (event) {
     }
   }
 };
-
-console.log('test');

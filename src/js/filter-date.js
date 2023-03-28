@@ -3,6 +3,7 @@ import 'flatpickr/dist/flatpickr.min.css';
 import lightFormat from 'date-fns/lightFormat';
 import { load, save, remove } from './storage';
 
+
 const DATE_KEY = 'date';
 const dateInput = document.querySelector('#datetime-picker');
 const options = {
