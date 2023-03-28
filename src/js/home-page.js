@@ -1,3 +1,5 @@
+import flatpickr from "flatpickr";
+import "flatpickr/dist/flatpickr.min.css";
 import { fetchNews } from './fetchNews';
 import { load, save, remove } from './storage';
 import { renderCard } from './renderCard';
@@ -32,7 +34,7 @@ const paginationNextBtn = document.querySelector("#next");
 window.addEventListener('load', async (event) => {
   try {
     await fetchNews();
-  updateNewsPage();
+    updateNewsPage();
   } catch(error) {
     console.log(error.message);
   }

@@ -5,9 +5,15 @@ const FAVORITE_KEY = 'favoriteNews';
 const READ_KEY = 'readNews';
 const cardFavorite = document.querySelector('.card-favorite__list');
 
-if (load(FAVORITE_KEY)) {
-  const favoriteNews = load(FAVORITE_KEY);
-  renderCardFavorite(favoriteNews);
+getFavoriteNews();
+function getFavoriteNews() {
+  if (!load(FAVORITE_KEY)) {
+    return;
+  }
+    const favoriteNews = load(FAVORITE_KEY);
+    if (favoriteNews) {
+      renderCardFavorite(favoriteNews);
+    }
 }
 
 cardFavorite.addEventListener('click', handleClickFavoriteBtn);
