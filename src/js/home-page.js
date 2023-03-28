@@ -1,28 +1,25 @@
-
 import { fetchNews } from './fetchNews';
 import { load, save } from './storage';
-import { renderCard} from './renderCard';
+import { renderCard } from './renderCard';
 
- 
-const NEWS_KEY = "newsObject";
-const FAVORITE_KEY = "favoriteNews";
-const READ_KEY = "readNews";
+const NEWS_KEY = 'newsObject';
+const FAVORITE_KEY = 'favoriteNews';
+const READ_KEY = 'readNews';
 
-const cardNews = document.querySelector(".card-news__list");
+const cardNews = document.querySelector('.card-news__list');
 
-window.addEventListener('load', async (event) => {
-  if (!load(NEWS_KEY)) {
-    try {
-      await fetchNews();
-      const parsedNews =  load(NEWS_KEY);
+window.addEventListener('load', async event => {
+  try {
+    await fetchNews();
+    const parsedNews = load(NEWS_KEY);
     renderCard(parsedNews);
-    } catch (error) {
-      console.log(error.message);
-    }
+  } catch (error) {
+    console.log(error.message);
   }
+
   const parsedNews = load(NEWS_KEY);
   renderCard(parsedNews);
-  })
+});
 
 if (!load(FAVORITE_KEY)) {
   save(FAVORITE_KEY, []);
@@ -34,12 +31,11 @@ if (!load(READ_KEY)) {
 const parsedNews = load(NEWS_KEY);
 renderCard(parsedNews);
 
-cardNews.addEventListener("click", handleClickFavoriteBtn);
-cardNews.addEventListener("click", handleClickRead);
-
+cardNews.addEventListener('click', handleClickFavoriteBtn);
+cardNews.addEventListener('click', handleClickRead);
 
 function handleClickFavoriteBtn(event) {
-  if (event.target.nodeName !== "BUTTON") {
+  if (event.target.nodeName !== 'BUTTON') {
     return;
   }
   const favoritNewsId = event.target.dataset.id;
@@ -51,25 +47,23 @@ function handleClickFavoriteBtn(event) {
   parsedeFavoriteNews.push(favoriteNews);
   save(FAVORITE_KEY, parsedeFavoriteNews);
 
-  const newsAfterRemove = parsedNews.filter(value => value.id !== favoritNewsId);
+  const newsAfterRemove = parsedNews.filter(
+    value => value.id !== favoritNewsId
+  );
   renderCard(newsAfterRemove);
   save(NEWS_KEY, newsAfterRemove);
- }
+}
 
 function handleClickRead(event) {
-  if (event.target.nodeName !== "A") {
+  if (event.target.nodeName !== 'A') {
     return;
   }
   const readCardUrl = event.target.dataset.url;
- 
+
   const parsedNews = load(NEWS_KEY);
   const parsedReadNews = load(READ_KEY);
-  
+
   const readNews = parsedNews.find(option => option.url === readCardUrl);
   parsedReadNews.push(readNews);
   save(READ_KEY, parsedReadNews);
- }
- 
-
-
-
+}

@@ -2,6 +2,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { FetchNews } from './fetchNewsApi';
 import { renderCard, cleanCard } from './renderCard';
 import { save, load } from './storage';
+import { getFilterDate } from './filter-date';
 
 const fetchNews = new FetchNews();
 const refs = {
@@ -35,6 +36,7 @@ async function onSearch(e) {
   }
 
   try {
+    fetchNews.date = getFilterDate();
     const response = await fetchNews.fetchBySearch();
     const cards = response.docs;
     const hits = response.meta.hits;
