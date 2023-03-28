@@ -11,7 +11,6 @@ const refs = {
   searchField: document.getElementById('form-field'),
   searchInput: document.getElementById('search-field__input'),
   plug: document.querySelector('.wrapper-plug'),
-  // weather: document.querySelector('.weather'),
   pagination: document.querySelector('.pagination'),
   categoriesContainer: document.getElementById('categories-container'),
 };
