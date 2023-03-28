@@ -119,63 +119,33 @@ font-weight: 400;
     color: #fff;
   }
 
+  .filter {
+    &__date {
+        display: flex;
+        margin-top: 24px;
 
-//   ---------------------------------------------------------------------------
-//   @media screen and (max-width: 768px) {
-//     /* Скрыть 4-ю и 5-ю ссылки */
-//     .categories-container_link:nth-child(n+4) {
-//       display: none;
-//     }
-//     /* Показать выпадающее меню */
-//     .dropdown {
-//       display: block;
-//     }
-//   }
-  
-//   @media screen and (max-width: 1278px) {
-//     /* Скрыть 6-ю и 7-ю ссылки */
-//     .categories-container_link:nth-child(n+6) {
-//       display: none;
-//     }
-//     /* Показать выпадающее меню */
-//     .dropdown {
-//       display: block;
-//     }
-//   }
+        @media (min-width: 769px) {
+            margin-top: 28px;
+        }
+    }
+  }
 
-// -------------------------------------------------------------------------
-// @media screen and (max-width: 768px) {
-//     /* Скрыть 4-ю и все последующие ссылки */
-//     #categories-container .categories-container_link:nth-child(n+4) {
-//       display: none;
-//     }
-    
-//     /* Показать выпадающее меню */
-//     .dropdown {
-//       display: block;
-//     }
-    
-//     /* Скрыть лишнее в выпадающем меню */
-//     #dropdown-categories-container .categories-container_link:nth-child(n+4) {
-//       display: none;
-//     }
-//   }
-  
-//   @media screen and (max-width: 1278px) {
-//     /* Скрыть 6-ю и все последующие ссылки */
-//     #categories-container .categories-container_link:nth-child(n+6) {
-//       display: none;
-//     }
-    
-//     /* Показать выпадающее меню */
-//     .dropdown {
-//       display: block;
-//     }
-    
-//     /* Скрыть лишнее в выпадающем меню */
-//     #dropdown-categories-container .categories-container_link:nth-child(n+6) {
-//       display: none;
-//     }
-//   }
+  .flatpickr-input {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 151px;
+    height: 31px;
+    border: 1px solid #4440F6;
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: 10px;
 
-  
+    @media (min-width: 769px) {
+        width: 137px;
+    }
+
+    &:focus, &:hover {
+        border: 1px solid #4440F6;
+    }
+  }
