@@ -7,6 +7,7 @@ const newsAPI = new FetchNews();
 const categoriesContainer = document.getElementById('categories-container');
 const menuContainer = document.getElementById('menu-container');
 const dropbtn = document.querySelector('.dropbtn');
+const plug = document.querySelector('.wrapper-plug');
 fetchNewsCategory();
 
 function fetchNewsCategory() {
@@ -60,6 +61,7 @@ function createLink(category) {
     newsAPI
       .fetchByCategory()
       .then(articles => {
+        plug.classList.add('is-hidden');
         renderCard(articles);
       })
       .catch(error => {
