@@ -46,11 +46,11 @@ export function renderCard(articles) {
 
     if (load(WEATHER_KEY)) {
       const weather = load(WEATHER_KEY);
-      markupAndWeather = [...markup.slice(0, 2), weather, ...markup.slice(2)].join("");
+      const markupAndWeather = [...markup.slice(0, 2), weather, ...markup.slice(2)].join("");
       articleList.innerHTML = markupAndWeather;
       console.log(articles);
     }
-    
+
   // articleList.insertAdjacentHTML('beforeend', markup);
   // console.log(articles);
 }
