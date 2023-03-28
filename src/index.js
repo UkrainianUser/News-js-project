@@ -7,7 +7,6 @@ import './js/fetchNewsApi';
 import './js/saerchNews';
 import './js/renderCard';
 import './js/storage';
-import './js/filter-date';
 
 
 // import './js/read';

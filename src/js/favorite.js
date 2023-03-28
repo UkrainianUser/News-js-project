@@ -34,7 +34,7 @@ function renderCardFavorite(news) {
           <div class="card-favorite__ovarlay">
           <img
           src=${img}
-          alt="Businesswoman"
+          alt="news image"
           width="395px"
           height="395px"
         />
