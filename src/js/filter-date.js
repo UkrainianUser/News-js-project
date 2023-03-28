@@ -6,7 +6,7 @@ import { load, save, remove } from './storage';
 const DATE_KEY = 'date';
 const dateInput = document.querySelector('#datetime-picker');
 const options = {
-  // defaultDate:  new Date(),
+  defaultDate:  new Date(),
   onClose(selectedDates) {
     console.log(selectedDates[0]);
     save(DATE_KEY, selectedDates[0]);
