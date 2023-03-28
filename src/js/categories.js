@@ -5,7 +5,7 @@ import { renderCard } from './renderCard';
 const newsAPI = new FetchNews();
 
 const categoriesContainer = document.getElementById('categories-container');
-const menuContainer = document.getElementById('menu-container');
+// const menuContainer = document.getElementById('menu-container');
 const dropbtn = document.querySelector('.dropbtn');
 const mediaQueryTablet = window.matchMedia('(max-width: 1278px)');
 const mediaQueryMobile = window.matchMedia('(max-width: 767px)');
@@ -16,7 +16,7 @@ fetchNewsCategory();
 test();
 
 function test() {
-  function handleScreenSizeChange(e) {
+  function handleScreenSizeChange() {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => {
       console.log('Screen size changed');

@@ -555,6 +555,7 @@ body[data-theme=dark] .search-field {
 }
 .search-field input:focus {
   color: #111321;
+  opacity: 1;
 }
 .search-field input:-webkit-autofill, .search-field input:-webkit-autofill:hover, .search-field input:-webkit-autofill:focus, .search-field input:-webkit-autofill:active {
   -webkit-transition: background-color 9999s, color 9999s;
@@ -1190,6 +1191,36 @@ body[data-theme=dark] .search-field {
 .activee {
   background-color: #4440F6;
   color: #fff;
+}
+
+.filter__date {
+  display: flex;
+  margin-top: 24px;
+}
+@media (min-width: 769px) {
+  .filter__date {
+    margin-top: 28px;
+  }
+}
+
+.flatpickr-input {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 151px;
+  height: 31px;
+  border: 1px solid #4440F6;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  gap: 10px;
+}
+@media (min-width: 769px) {
+  .flatpickr-input {
+    width: 137px;
+  }
+}
+.flatpickr-input:focus, .flatpickr-input:hover {
+  border: 1px solid #4440F6;
 }
 
 .weather {
