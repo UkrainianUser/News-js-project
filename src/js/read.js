@@ -24,7 +24,7 @@ function getReadNews() {
         return obj;
       }, {});
       renderCardRead(readObj);
-   }
+  }
 }
 
 function getSortDate(news) {
