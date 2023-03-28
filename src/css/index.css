@@ -921,6 +921,8 @@ body[data-theme=dark] .search-field {
 .card-news__list {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row-reverse;
+  justify-content: center;
   gap: 32px;
 }
 @media (min-width: 767.98px) {
