@@ -1,5 +1,5 @@
 .card-favorite__list {
-    @media (min-width: 768px) {
+    @media (min-width: $pre_tablet) {
         display: flex;
         gap: 30px;
     }
@@ -11,12 +11,12 @@
     width: 288px;
     height: 630px;
 
-    @media (min-width: 768px) {
+    @media (min-width: $pre_tablet) {
         width: 353px;
         height: 675px;
     }
 
-    @media (min-width: 1200px) {
+    @media (min-width: $pre_desktop) {
         width: 395px;
         height: 675px;
     }
@@ -41,9 +41,9 @@
     text-align: center;
     align-items: center;
     justify-content: center;
-    background-color: rgba(68, 64, 247, 0.7);
+    background-color: $category-bg-color;
     border-radius: 0px 4px 4px 0px;
-    font-family: 'Manrope', sans-serif;
+    font-family: $prim-font;
     font-weight: 500;
     font-size: 12px;
     line-height: 1.33;
@@ -54,9 +54,9 @@
     position: absolute;
     bottom: 12px;
     right: 8px;
-    width: 126px;
+    width: 168px;
     height: 28px;
-    font-family: 'Manrope', sans-serif;
+    font-family: $prim-font;
     font-weight: 500;
     font-size: 12px;
     line-height: 1.33;
@@ -78,7 +78,7 @@
 }
 
 .card-favorite__title {
-    font-family: 'Manrope', sans-serif;
+    font-family: $prim-font;
     font-weight: 700;
     font-size: 24px;
     line-height: 1.38;
@@ -86,14 +86,14 @@
     color: $prim-text-color;
     margin-top: 20px;
 
-    @media (min-width: 768px) {
+    @media (min-width: $pre_tablet) {
         font-size: 32px;
     }
 
 }
 
 .card-favorite__text {
-    font-family: 'Manrope', sans-serif;
+    font-family: $prim-font;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.36;
@@ -101,14 +101,14 @@
     margin-top: 20px;
     margin-bottom: 20px;
 
-    @media (min-width: 768px) {
+    @media (min-width: $pre_tablet) {
         font-size: 16px;
         line-height: 1.38;
     }
 }
 
 .card-favorite__time {
-    font-family: 'Manrope', sans-serif;
+    font-family: $prim-font;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.36;
@@ -121,12 +121,12 @@
 .card-favorite__element {
     position: absolute;
     right: 17px;
-    font-family: 'Manrope', sans-serif;
+    font-family: $prim-font;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.36;
-    color: #4440F7;
+    color:$filter-bordercolor;
     text-decoration: none;
     cursor: pointer;
 }

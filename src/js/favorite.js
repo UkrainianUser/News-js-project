@@ -5,9 +5,15 @@ const FAVORITE_KEY = 'favoriteNews';
 const READ_KEY = 'readNews';
 const cardFavorite = document.querySelector('.card-favorite__list');
 
-if (load(FAVORITE_KEY)) {
-  const favoriteNews = load(FAVORITE_KEY);
-  renderCardFavorite(favoriteNews);
+getFavoriteNews();
+function getFavoriteNews() {
+  if (!load(FAVORITE_KEY)) {
+    return;
+  }
+    const favoriteNews = load(FAVORITE_KEY);
+    if (favoriteNews) {
+      renderCardFavorite(favoriteNews);
+    }
 }
 
 cardFavorite.addEventListener('click', handleClickFavoriteBtn);
@@ -34,9 +40,9 @@ function renderCardFavorite(news) {
           <div class="card-favorite__ovarlay">
           <img
           src=${img}
-          alt="Businesswoman"
-          width="288"
-          height="395"
+          alt="news image"
+          width="395px"
+          height="395px"
         />
         <p class="card-favorite__category">${category}</p>
         <button data-id=${id} class="card-favorite__button" type="button">

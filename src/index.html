@@ -52,7 +52,7 @@
               type="text"
               name="searchQuery"
               id="search-field__input"
-              placeholder="Search"
+              placeholder="Search |"
             />
           </form>
           <button
@@ -85,14 +85,19 @@
 
     <main>
       <div class="filter">
-        <div class="container">
+        <div class="container filter-container">
           <div class="filter__categories">
             <include
               src="./partials/home-page/filter-categories.html"
             ></include>
           </div>
           <div class="filter__date">
-            <include src="./partials/home-page/filter-date.html"></include>
+            <input
+              type="text"
+              id="datetime-picker"
+              name="date"
+              placeholder="Select Date.."
+            />
           </div>
         </div>
         <div class="news">
@@ -100,13 +105,43 @@
           <include src="./partials/home-page/weather.html"></include>
         </div>
 
-        <include src="./partials/home-page/pagination.html"></include>
+        <div class="wrapper-plug is-hidden">
+          <h1 class="wrapper-plug__title">
+            We haven’t found news from this category
+          </h1>
+          <img
+            srcset="
+              ./images/plug-mobile.png   320w,
+              ./images/plug-tablet.png   768w,
+              ./images/plug-desktop.png 1200w
+            "
+            src="./images/plug-mobile.png"
+            alt="Not found news"
+            class="plug-image"
+          />
+        </div>
+
+        <div class="pagination hidden">
+          <ul class="pagination__list">
+            <li class="pagination__item">
+              <button class="pagination__button-prev" type="button" id="prev">
+                Prev
+              </button>
+            </li>
+            <ul class="pagination__list-button"></ul>
+            <li class="pagination__item-next">
+              <button class="pagination__button-next" type="button" id="next">
+                Next
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
     </main>
     <!-- Mobile menu  -->
     <div class="mobile-menu js-menu-container" id="mobile-menu">
       <div class="mobile-menu__topwrapper">
-        <a class="header__logo mobile-menu__logo" href="./index.html">News</a>
+        <a class="logo mobile-menu__logo" href="./index.html">News</a>
         <button class="mobile-menu__close-button js-close-menu">
           <svg class="mobile-menu__icon-close" width="24" height="24">
             <use href="./svg/symbol-defs.svg#icon-close_menu"></use>
@@ -174,7 +209,7 @@
       integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="./index.js"></script>
     <script type="module" src="./indexHome.js"></script>
+    <!-- <script type="module" src="./index.js"></script> -->
   </body>
 </html>
