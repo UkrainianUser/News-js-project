@@ -1,9 +1,10 @@
 import weather, { getWeather }  from "./weather";
+import { load, save, remove } from './storage';
 
+const WEATHER_KEY = "weaterObject";
+addWeather()
 
-const weatherForm = document.querySelector('.card-news__list');
-
- async function addWeather() {
+export async function addWeather() {
   try {
     const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' }
     const response = await getWeather();
@@ -17,12 +18,13 @@ const weatherForm = document.querySelector('.card-news__list');
       <img class="weather__icon" src="https://openweathermap.org/img/wn/${data.weather[0].icon}.png" alt="${data.weather[0].description}">
       <p class="weather__date">${new Date(data.dt*1000).toLocaleDateString('en-GB', options)}</p></li>`
         
-          return weatherForm.insertAdjacentHTML('afterbegin', createMarkup);  
+      save(WEATHER_KEY, createMarkup);
+          // return weatherForm.insertAdjacentHTML('afterbegin', createMarkup);  
   } catch (error) {
     console.error(error);
   }
- }
+}
 
- addWeather();
+//  addWeather();
 
 

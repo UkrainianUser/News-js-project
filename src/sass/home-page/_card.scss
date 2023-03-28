@@ -1,7 +1,7 @@
 .card-news__list {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row-reverse;
+  // flex-direction: row-reverse;
   justify-content: center;
   gap: 32px;
   @media (min-width: $pre_tablet) {
@@ -16,7 +16,7 @@
 
     @media (min-width: 1280px) {
         display: flex;
-        flex-direction: row-reverse;
+        // flex-direction: row-reverse;
     }
 }
 

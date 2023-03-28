@@ -4,7 +4,7 @@ import { fetchNews } from './fetchNews';
 import { load, save, remove } from './storage';
 import { renderCard } from './renderCard';
 import { renderPaginationBtn, getNewsByPage, getnewsPerPage} from './pagination';
-
+import { addWeather } from "./weatherBase";
 
 const NEWS_KEY = 'newsObject';
 const FAVORITE_KEY = 'favoriteNews';
@@ -30,6 +30,8 @@ const paginationNextBtn = document.querySelector("#next");
 //   const parsedNews = load(NEWS_KEY);
 //   renderCard(parsedNews);
 // });
+
+addWeather();
 
 window.addEventListener('load', async (event) => {
   try {

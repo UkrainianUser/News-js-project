@@ -196,8 +196,8 @@ body[data-theme="dark"] {
 #toggle::before, #mobile-toggle::before {
 	content: "";
 	position: absolute;
-	top: 1px;
-	left: 1px;
+	top: 0;
+	left: 0;
 	width: 17px;
 	height: 17px;
 	border-radius: 20px;
