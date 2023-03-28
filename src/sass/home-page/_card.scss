@@ -1,175 +1,168 @@
 .card-news__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  @media (min-width: $pre_tablet) {
     display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
-    @media (min-width: $pre_tablet) {
-        display: flex;
-        gap: 30px;
-    }
+    gap: 30px;
+  }
 }
 
-.card-news__item:nth-child(2){
-    @media (min-width: $pre_desktop) {
-        margin-right: 395px;
-    }
-    @media (max-width: $pre_tablet) {
-        margin-right: 0;}
+.card-news__item:nth-child(2) {
+  @media (min-width: $pre_desktop) {
+    margin-right: 395px;
+  }
+  @media (max-width: $pre_tablet) {
+    margin-right: 0;
+  }
 }
 
-.card-news__item:nth-child(1){
-    @media (max-width: 1278px) {
-        margin-right: 720px;
-    }
+.card-news__item:nth-child(1) {
+  @media (max-width: 1278px) {
+    margin-right: 720px;
+  }
 }
 
 .card-news__item {
-    position: relative;
-    margin-bottom: 28px;
-    width: 288px;
-    height: 630px;
-    
+  position: relative;
+  margin-bottom: 28px;
+  width: 288px;
+  height: 630px;
 
-    @media (min-width: $pre_tablet) {
-        width: 353px;
-        height: 675px;
-    }
+  @media (min-width: $pre_tablet) {
+    width: 353px;
+    height: 675px;
+  }
 
-    @media (min-width: $pre_desktop) {
-        width: 395px;
-        height: 675px;
-    }
+  @media (min-width: $pre_desktop) {
+    width: 395px;
+    height: 675px;
+  }
 }
 
-
 .card-news__link {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .card-news__ovarlay {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 img {
-    border-radius: 4px;
+  border-radius: 4px;
 }
 
-
 .card-news__category {
-    position: absolute;
-    top: 40px;
-    width: 112px;
-    height: 24px;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    background-color: $category-bg-color;
-    border-radius: 0px 4px 4px 0px;
-    font-family: $prim-font;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.33;
-    color: $prim-white-color;
+  position: absolute;
+  top: 40px;
+  width: 112px;
+  height: 24px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: $category-bg-color;
+  border-radius: 0px 4px 4px 0px;
+  font-family: $prim-font;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  color: $prim-white-color;
 }
 
 .card-news__button {
-    position: absolute;
-    bottom: 12px;
-    right: 8px;
-    height: 28px;
-    font-family: $prim-font;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.33;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4px;
-    // padding: 6px 12px;
-    text-align: center;
-    color: $prim-text-color;
-    background-color:$prim-white-color;
-    border:$prim-white-color;
-    border-radius: 20px;
-    
+  position: absolute;
+  bottom: 12px;
+  right: 8px;
+  height: 28px;
+  font-family: $prim-font;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  // padding: 6px 12px;
+  text-align: center;
+  color: $prim-text-color;
+  background-color: $prim-white-color;
+  border: $prim-white-color;
+  border-radius: 20px;
 }
 
 .card-news__button--add {
-    width: 126px;
+  width: 126px;
 }
 
 .card-news__button--remove {
-    width: 168px;
+  width: 168px;
 }
-
 
 .card-news__icon {
-    fill: $accent-color;
+  fill: $accent-color;
 }
-
 
 // .card-news__icon-favorite {
 //     fill: $accent-color;
 // }
 
 .card-news__title {
-    font-family: $prim-font;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 1.38;
-    letter-spacing: -0.01em;
-    color: $prim-text-color;
-    margin-top: 20px;
+  font-family: $prim-font;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.38;
+  letter-spacing: -0.01em;
+  color: $prim-text-color;
+  margin-top: 20px;
 
-    @media (min-width: $pre_tablet) {
-        font-size: 32px;
-    }
-
+  @media (min-width: $pre_tablet) {
+    font-size: 32px;
+  }
 }
 
 .card-news__text {
-    font-family: $prim-font;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.36;
-    color:$prim-text-color;
-    margin-top: 20px;
-    margin-bottom: 20px;
+  font-family: $prim-font;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.36;
+  color: $prim-text-color;
+  margin-top: 20px;
+  margin-bottom: 20px;
 
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    height: 57px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  height: 57px;
 
-    @media (min-width: $pre_tablet) {
-        font-size: 16px;
-        line-height: 1.38;
-        height: 66px;
-    }
+  @media (min-width: $pre_tablet) {
+    font-size: 16px;
+    line-height: 1.38;
+    height: 66px;
+  }
 }
 
 .card-news__time {
-    font-family: $prim-font;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.36;
-    text-align: right;
-    color: $passive-color;
-    display: inline-block;
-
+  font-family: $prim-font;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.36;
+  text-align: right;
+  color: $passive-color;
+  display: inline-block;
 }
 
 .card-news__element {
-    position: absolute;
-    right: 17px;
-    font-family: $prim-font;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.36;
-    color: $filter-bordercolor;
-    text-decoration: none;
-    cursor: pointer;
+  position: absolute;
+  right: 17px;
+  font-family: $prim-font;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.36;
+  color: $filter-bordercolor;
+  text-decoration: none;
+  cursor: pointer;
 }
