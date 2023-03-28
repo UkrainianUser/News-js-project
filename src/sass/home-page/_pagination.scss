@@ -47,6 +47,13 @@
       line-height: 1.3;
 }
 
+.pagination__button:hover,
+.pagination__button-prev:hover,
+.pagination__button-next:hover {
+  background-color:  #4440F7;
+  color: #fff;
+}
+
 // .pagination {
 //   margin-top: 100px;
 //   padding: 30px;
