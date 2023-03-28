@@ -1,6 +1,7 @@
 .card-news__list {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row-reverse;
   gap: 32px;
   @media (min-width: $pre_tablet) {
     display: flex;
@@ -174,4 +175,5 @@ img {
   color: $filter-bordercolor;
   text-decoration: none;
   cursor: pointer;
+}
 }
