@@ -10,11 +10,21 @@ const READ_KEY = "readNews";
 
 const cardNews = document.querySelector(".card-news__list");
 
-fetchNews();
+window.addEventListener('load', async (event) => {
+  if (!load(NEWS_KEY)) {
+    try {
+      await fetchNews();
+      const parsedNews =  load(NEWS_KEY);
+    renderCard(parsedNews);
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+  const parsedNews = load(NEWS_KEY);
+  renderCard(parsedNews);
+  })
 
-//  getNews();
-
- if (!load(FAVORITE_KEY)) {
+if (!load(FAVORITE_KEY)) {
   save(FAVORITE_KEY, []);
 }
 if (!load(READ_KEY)) {

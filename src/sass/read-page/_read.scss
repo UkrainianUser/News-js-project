@@ -1,5 +1,12 @@
-/* Accordeon */
+.card-news__item.read {
+    list-style-type: none;
+    position: relative;
+    margin-bottom: 28px;
+    width: 395px;
+    height: 675px;
+}
 
+/* Accordeon */
 .date__item {
     list-style-type: none;
     display: flex;
@@ -9,30 +16,27 @@
     width: 100%;
     text-align: left;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    transition: 0.4s;  
+    transition: 0.4s;
 }
-
 .date__item::after {
     display: flex;
     justify-content: center;
     content: '\2304'; /* Unicode  */
     font-size: 13px;
-   
     float: right;
     margin-left: 20px;
     margin-top: 22px;
-   
 }
 .active::after {
     content: '\2303';
 }
-
 .card-news__box {
     display: none;
 }
 .card-news__box.active {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
     list-style-type: none;
     padding-top: 40px;
-    display: block;
-    overflow: hidden;
 }

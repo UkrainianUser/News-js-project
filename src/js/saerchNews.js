@@ -7,6 +7,9 @@ const fetchNews = new FetchNews();
 const refs = {
   searchField: document.getElementById('form-field'),
   searchInput: document.getElementById('search-field__input'),
+  plug: document.querySelector('.wrapper-plug'),
+  weather: document.querySelector('.weather'),
+  pagination: document.querySelector('.pagination'),
 };
 const NEWS_KEY = 'newsObject';
 const IMAGE_BASE_URL = 'https://static01.nyt.com/';
@@ -42,10 +45,16 @@ async function onSearch(e) {
       Notify.failure(
         'Sorry, there are no news matching your search query. Please try again.'
       );
+
+      refs.plug.classList.remove('is-hidden');
+      refs.weather.classList.add('is-hidden');
+      refs.pagination.classList.add('is-hidden');
       return;
     }
 
-    console.log(cards);
+    refs.plug.classList.add('is-hidden');
+    refs.weather.classList.remove('is-hidden');
+    refs.pagination.classList.remove('is-hidden');
     const newsObject = normalizeObj(cards);
     save(NEWS_KEY, newsObject);
     const parsedNews = await load(NEWS_KEY);

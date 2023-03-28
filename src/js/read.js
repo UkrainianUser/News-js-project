@@ -8,25 +8,28 @@ const READ_KEY = 'readNews';
 const FAVORITE_KEY = 'favoriteNews';
 
 const dateWrapper = document.querySelector('.date__wrapper');
+
 getReadNews();
+
 function getReadNews() {
   if (load(READ_KEY).length) {
-    const readNews = load(READ_KEY);
-    const rangeDate = getSortDate(readNews);
-    const readObj = rangeDate.reduce((obj, date) => {
-      obj[date] = readNews.filter(value => {
-        return isSameDay(new Date(date), new Date(value.data));
-      });
-      return obj;
-    }, {});
-
-    renderCardRead(readObj);
-  }
+      const readNews = load(READ_KEY);
+      const normalizeNews = readNews.filter((value) => value);
+      const rangeDate = getSortDate(readNews);
+      console.log(rangeDate);
+      const readObj = rangeDate.reduce((obj, date) => {
+        obj[date] = normalizeNews.filter((value) => {
+          return isSameDay(new Date(date), new Date(value.data));
+        });
+        return obj;
+      }, {});
+      renderCardRead(readObj);
+   }
 }
 
 function getSortDate(news) {
-  const dateArray = news.map(item => {
-    return new Date(item.data);
+  const dateArray = news?.map(item => {
+    return new Date(item?.data);
   });
   console.log(dateArray);
 
@@ -67,10 +70,10 @@ function renderCardRead(readObj) {
   const markup = Object.keys(readObj)
     .map((item, index) => {
       return `  <li class="date__item" data-index=${index}>
-         <div class="date__card"><h3 class="date__text">${lightFormat(
-           new Date(item),
-           'dd/MM/yyyy'
-         )}</h3></div></li>
+        <div class="date__card"><h3 class="date__text">${lightFormat(
+          new Date(item),
+          'dd/MM/yyyy'
+        )}</h3></div></li>
 
           <ul class="card-news__box">${getText(readObj[item])}</ul>`;
     })
@@ -79,39 +82,37 @@ function renderCardRead(readObj) {
 }
 
 function getText(news) {
-  const markup = news
-    .map(({ id, title, paragraph, img, data, url, category, multimedia }) => {
-      return `<li class="card-news__item">
-        <div class="card-news__ovarlay">
+  const markup = news.map(({id, title, paragraph, img, data, url, category, multimedia}) => {
+      return `<li class="card-news__item read">
+      <div class="card-news__ovarlay">
+      <picture>
         <img
-        src=${multimedia ? multimedia[1].url : ''}
-        alt=${multimedia ? multimedia[1].caption : 'news image'}
-          width="395"
-          height="290"
+        src=${img}
+        alt= "news image"
+        width="360"
+        height="290"
       />
-      <p class="card-news__category">${category}</p>
-      <button data-id=${id} class="card-news__button" type="button">
-      Add to favirite
-      <svg class="card-news__icon" width="16" height="16">
-        <use href="./svg/symbol-defs.svg#icon-heart-not-action"></use>
-      </svg>
-    </button>
-  </div>
-  <h2 class="card-news__title">
-       ${title}
-      </h2>
-      <p class="card-news__text">
-        ${paragraph}
-      </p>
-      <time class="card-news__time">${lightFormat(
-        new Date(data),
-        'dd/MM/yyyy'
-      )}</time>
-      <a data-url=${url} class="card-news__element" href=${url} target="_blank" rel="noreferrer noopener">Read more</a>
-    </li>`;
-    })
-    .join('');
-  return markup;
+      </picture>
+    <p class="card-news__category">${category}</p>
+    <button data-id=${id} class="card-news__button" type="button">
+    Add to favirite
+    <svg class="card-news__icon" width="16" height="16">
+      <use href="./svg/symbol-defs.svg#icon-heart-not-action"></use>
+    </svg>
+  </button>
+</div>
+<h2 class="card-news__title">
+    ${title}
+    </h2>
+    <p class="card-news__text">
+      ${paragraph}
+    </p>
+    <time class="card-news__time">${lightFormat(new Date(data
+        ), 'dd/MM/yyyy')}</time>
+    <a data-url=${url} class="card-news__element" href=${url} target="_blank" rel="noreferrer noopener">Read more</a>
+  </li>`
+}).join("");
+return markup;
 }
 
 dateWrapper.addEventListener('click', handleClickItem);

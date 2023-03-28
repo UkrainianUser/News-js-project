@@ -15,20 +15,20 @@ export async function fetchNews() {
         "api-key": API_KEY_NEWS,
       }
     });
-      console.log(response.data);
+      // console.log(response.data);
       const newsObject = response.data.results.map(({uri, title, abstract, thumbnail_standard, published_date, url, multimedia, section}) => {
         return {
             id: uri,
             title,
             paragraph: abstract,
-            img: thumbnail_standard,
+            img: multimedia ? multimedia[1].url : thumbnail_standard,
             data: published_date,
             url,
             multimedia,
             category: section
         }
       });
-      console.log(newsObject);
+      // console.log(newsObject);
       save(NEWS_KEY, newsObject);
 
     } catch (error) {

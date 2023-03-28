@@ -1,14 +1,14 @@
+import { lightFormat } from 'date-fns';
 import { save, load } from './storage';
 
 const FAVORITE_KEY = 'favoriteNews';
 const READ_KEY = 'readNews';
+const cardFavorite = document.querySelector('.card-favorite__list');
 
 if (load(FAVORITE_KEY)) {
   const favoriteNews = load(FAVORITE_KEY);
   renderCardFavorite(favoriteNews);
 }
-
-const cardFavorite = document.querySelector('.card-favorite__list');
 
 cardFavorite.addEventListener('click', handleClickFavoriteBtn);
 
@@ -27,15 +27,16 @@ function handleClickFavoriteBtn(event) {
 }
 
 function renderCardFavorite(news) {
-  const markup = news
+  const normalizeNews = news.filter((value) => value);
+  const markup = normalizeNews
     .map(({ id, title, paragraph, img, data, url, category, multimedia }) => {
       return `<li class="card-favorite__item">
           <div class="card-favorite__ovarlay">
           <img
           src=${img}
           alt="Businesswoman"
-          width="288"
-          height="395"
+          width="395px"
+          height="395px"
         />
         <p class="card-favorite__category">${category}</p>
         <button data-id=${id} class="card-favorite__button" type="button">
@@ -55,7 +56,7 @@ function renderCardFavorite(news) {
           new Date(data),
           'dd/MM/yyyy'
         )}</time>
-        <a class="card-favorite__element" href=${url} target="_blank" rel="noreferrer noopener">Read more</a>
+        <a data-url=${url} class="card-favorite__element" href=${url} target="_blank" rel="noreferrer noopener">Read more</a>
       </li>`;
     })
     .join('');
@@ -70,10 +71,11 @@ function handleClickRead(event) {
   }
   const readCardUrl = event.target.dataset.url;
 
+  if (load(FAVORITE_KEY) && load(READ_KEY)) {
   const parsedNews = load(FAVORITE_KEY);
   const parsedReadNews = load(READ_KEY);
 
   const readNews = parsedNews.find(option => option.url === readCardUrl);
   parsedReadNews.push(readNews);
-  save(READ_KEY, parsedReadNews);
+  save(READ_KEY, parsedReadNews);}
 }

@@ -1,0 +1,35 @@
+.wrapper-plug {
+    padding-top: 40px;
+    margin: 0 auto;
+    text-align: center;
+
+    @media screen and (min-width: $pre_tablet) {
+        padding-top: 88px;
+    }
+
+    @media screen and (min-width: $pre_desktop) {
+        padding-top: 121px;
+    }
+    
+}
+
+.is-hidden {
+    display: none;
+}
+
+.wrapper-plug__title {
+    padding-bottom: 40px;
+    margin: 0 auto;
+    font-family: $prim-font;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 27px;
+    max-width: 276px;
+    
+    @media (min-width: $pre_tablet) {
+            font-size: 40px;
+            line-height: 55px;
+            max-width: 548px;
+    }
+}
