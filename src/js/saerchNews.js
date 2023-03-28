@@ -1,8 +1,9 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { FetchNews } from './fetchNewsApi';
 import { renderCard, cleanCard } from './renderCard';
-import { save, load } from './storage';
+import { save, load, remove } from './storage';
 import { getFilterDate } from './filter-date';
+import { updateNewsPage } from './home-page';
 
 const fetchNews = new FetchNews();
 const refs = {
@@ -11,6 +12,7 @@ const refs = {
   plug: document.querySelector('.wrapper-plug'),
   weather: document.querySelector('.weather'),
   pagination: document.querySelector('.pagination'),
+  categoriesContainer: document.getElementById('categories-container'),
 };
 const NEWS_KEY = 'newsObject';
 const IMAGE_BASE_URL = 'https://static01.nyt.com/';
@@ -41,9 +43,10 @@ async function onSearch(e) {
     const cards = response.docs;
     const hits = response.meta.hits;
 
+    offActivee();
     cleanCard();
 
-    if (hits === 0) {
+    if (cards.length === 0) {
       Notify.failure(
         'Sorry, there are no news matching your search query. Please try again.'
       );
@@ -58,9 +61,11 @@ async function onSearch(e) {
     refs.weather.classList.remove('is-hidden');
     refs.pagination.classList.remove('is-hidden');
     const newsObject = normalizeObj(cards);
+    // remove(NEWS_KEY);
     save(NEWS_KEY, newsObject);
     const parsedNews = await load(NEWS_KEY);
     renderCard(parsedNews);
+    // updateNewsPage();
 
     Notify.success(`Ok! We found ${hits} news.`);
   } catch (error) {
@@ -100,4 +105,15 @@ function normalizeObj(news) {
   );
 
   return newsObject;
+}
+
+function offActivee() {
+  const links = Array.from(refs.categoriesContainer.children);
+
+  for (const link of links) {
+    if (link.classList.contains('activee')) {
+      link.classList.remove('activee');
+      break;
+    }
+  }
 }

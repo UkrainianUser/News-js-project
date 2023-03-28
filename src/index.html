@@ -92,7 +92,12 @@
             ></include>
           </div>
           <div class="filter__date">
-            <include src="./partials/home-page/filter-date.html"></include>
+            <input
+              type="text"
+              id="datetime-picker"
+              name="date"
+              placeholder="Select Date.."
+            />
           </div>
         </div>
         <div class="news">
@@ -116,7 +121,21 @@
           />
         </div>
 
-        <include src="./partials/home-page/pagination.html"></include>
+        <div class="pagination hidden">
+          <ul class="pagination__list">
+            <li class="pagination__item">
+              <button class="pagination__button-prev" type="button" id="prev">
+                Prev
+              </button>
+            </li>
+            <ul class="pagination__list-button"></ul>
+            <li class="pagination__item-next">
+              <button class="pagination__button-next" type="button" id="next">
+                Next
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
     </main>
     <!-- Mobile menu  -->
@@ -190,7 +209,7 @@
       integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="./index.js"></script>
     <script type="module" src="./indexHome.js"></script>
+    <!-- <script type="module" src="./index.js"></script> -->
   </body>
 </html>

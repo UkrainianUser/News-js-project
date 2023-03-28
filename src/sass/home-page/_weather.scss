@@ -1,23 +1,31 @@
-.weather-container {
-    position: relative;
-}
+
 .weather {
-    position: absolute;
-	right: 16px;
     display: flexbox;
-    width: 395px;
-    height: 675px;
+    flex-wrap: wrap;
+    width: 288px;
+    height: 469px;
     background-color: $accent-color;
-    
-        @media (max-width: 768px) {
-            position: relative;
-            width: 288px;
-            height: 469px;
+
+    @media (min-width: 769px) and (max-width: 1279px){
+        width: 353px;
+        height: 675px;
     }
 
+        @media (min-width: 1280px) {
+        width: 395px;
+        height: 675px;
+        }
+    
         &__block {
             display: flex;
             flex-wrap: nowrap;
+
+            @media (min-width: 769px){
+                margin-top: 45px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
         }
 
         &__number {
@@ -33,7 +41,13 @@
         font-size: 55px;
         line-height: 1.17;
         color: $prim-white-color;
-        border-right: 1px solid $prim-white-color; 
+        border-right: 1px solid $prim-white-color;
+
+        @media (min-width: 769px){
+            width: 95px;
+            height: 75px;
+            font-size: 64px;
+        }
         }
 
         &__location {
@@ -43,14 +57,23 @@
             margin-left: 11px;
             margin-right: 5px;
 
+            @media (min-width: 769px){
+                margin-left: 8px;
+            }
+
         }
 
         &__title {
+            margin-right: 10px;
             font-family: Roboto;
             font-weight: 400;
             font-size: 24px;
             line-height: 1.17;
             color: $prim-white-color;
+
+            @media (min-width: 769px){
+                font-size: 36px;
+            }
         }
 
         &__city {
@@ -68,6 +91,12 @@
             font-weight: 400;
             font-size: 14px;
             line-height: 1.49;
+
+            @media (min-width: 769px){
+                width: 177px;
+                height: 42px;
+                font-size: 20px;
+            }
            
         }
 
@@ -83,6 +112,12 @@
         margin-top: 51px;
         margin-left: auto;
         margin-right: auto;
+
+        @media (min-width: 769px){
+            width: 165px;
+            height: 156px;
+            margin-top: 91px;
+        }
     }
 
     &__date {
@@ -103,5 +138,12 @@
             line-height: 1.17;
 
             color: $prim-white-color;
+
+            @media (min-width: 769px){
+                margin-top: 90px;
+                width: 199px;
+                height: 84px;
+                font-size: 36px;
+            } 
     }
 }
