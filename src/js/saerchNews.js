@@ -4,13 +4,14 @@ import { renderCard, cleanCard } from './renderCard';
 import { save, load, remove } from './storage';
 import { getFilterDate } from './filter-date';
 import { updateNewsPage } from './home-page';
+import { addWeather } from './weatherBase';
 
 const fetchNews = new FetchNews();
 const refs = {
   searchField: document.getElementById('form-field'),
   searchInput: document.getElementById('search-field__input'),
   plug: document.querySelector('.wrapper-plug'),
-  weather: document.querySelector('.weather'),
+  // weather: document.querySelector('.weather'),
   pagination: document.querySelector('.pagination'),
   categoriesContainer: document.getElementById('categories-container'),
 };
@@ -52,18 +53,17 @@ async function onSearch(e) {
       );
 
       refs.plug.classList.remove('is-hidden');
-      refs.weather.classList.add('is-hidden');
       refs.pagination.classList.add('is-hidden');
       return;
     }
 
     refs.plug.classList.add('is-hidden');
-    refs.weather.classList.remove('is-hidden');
     refs.pagination.classList.remove('is-hidden');
     const newsObject = normalizeObj(cards);
     // remove(NEWS_KEY);
     save(NEWS_KEY, newsObject);
     const parsedNews = await load(NEWS_KEY);
+    addWeather();
     renderCard(parsedNews);
     // updateNewsPage();
 

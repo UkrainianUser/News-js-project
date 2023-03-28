@@ -8,7 +8,7 @@ export class FetchNews {
     this.searchQuery = '';
     this.category = '';
     this.date;
-    this.page = 1;
+    this.page = 0;
   }
 
   async fetchBySearch() {
@@ -154,7 +154,7 @@ export class FetchNews {
   }
 
   decrementPage() {
-    if (this.page > 1) {
+    if (this.page > 0) {
       this.page -= 1;
     }
 
@@ -162,7 +162,7 @@ export class FetchNews {
   }
 
   resetPage() {
-    this.page = 1;
+    this.page = 0;
   }
 
   get query() {
