@@ -9,6 +9,7 @@ import './js/renderCard';
 import './js/storage';
 import './js/filter-date';
 import './js/categories';
+import './js/calendar';
 import './js/weather';
 import './js/weatherBase';
 import './js/pagination';
