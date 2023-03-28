@@ -53,6 +53,9 @@ body[data-theme="light"] {
 	& .search__icon {
 		fill: $prim-text-color;
 	}
+	 & .search-field{
+	 	border-color: $prim-text-color;
+	 }
 }
 
 body[data-theme="dark"] {
@@ -101,7 +104,10 @@ body[data-theme="dark"] {
 	& .search__icon {
 		fill: $dt-prim-text-color;
 	}
-}
+	& .search-field {
+	      	border-color: $dt-prim-text-color;
+	     }
+ }
 
 .theme-switch {
 	display: none;
