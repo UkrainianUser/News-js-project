@@ -7,7 +7,7 @@ export function renderCard(articles) {
   // console.log(articles);
   const markup = articles
     .map(({ id, title, paragraph, img, data, url, category, multimedia }) => {
-      return `<li class="card-news__item">
+      return `<li class="card-news__item" data-read=${url}>
           <div class="card-news__ovarlay">
           <img
           src=${img ? img : imgNotFound}

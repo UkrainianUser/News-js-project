@@ -1,8 +1,9 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { FetchNews } from './fetchNewsApi';
 import { renderCard, cleanCard } from './renderCard';
-import { save, load } from './storage';
+import { save, load, remove } from './storage';
 import { getFilterDate } from './filter-date';
+import { updateNewsPage } from './home-page';
 
 const fetchNews = new FetchNews();
 const refs = {
@@ -58,9 +59,11 @@ async function onSearch(e) {
     refs.weather.classList.remove('is-hidden');
     refs.pagination.classList.remove('is-hidden');
     const newsObject = normalizeObj(cards);
+    remove(NEWS_KEY);
     save(NEWS_KEY, newsObject);
     const parsedNews = await load(NEWS_KEY);
-    renderCard(parsedNews);
+    // renderCard(parsedNews);
+    updateNewsPage();
 
     Notify.success(`Ok! We found ${hits} news.`);
   } catch (error) {
