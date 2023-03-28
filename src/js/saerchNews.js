@@ -11,6 +11,7 @@ const refs = {
   plug: document.querySelector('.wrapper-plug'),
   weather: document.querySelector('.weather'),
   pagination: document.querySelector('.pagination'),
+  categoriesContainer: document.getElementById('categories-container'),
 };
 const NEWS_KEY = 'newsObject';
 const IMAGE_BASE_URL = 'https://static01.nyt.com/';
@@ -41,9 +42,10 @@ async function onSearch(e) {
     const cards = response.docs;
     const hits = response.meta.hits;
 
+    offActivee();
     cleanCard();
 
-    if (hits === 0) {
+    if (cards.length === 0) {
       Notify.failure(
         'Sorry, there are no news matching your search query. Please try again.'
       );
@@ -100,4 +102,15 @@ function normalizeObj(news) {
   );
 
   return newsObject;
+}
+
+function offActivee() {
+  const links = Array.from(refs.categoriesContainer.children);
+
+  for (const link of links) {
+    if (link.classList.contains('activee')) {
+      link.classList.remove('activee');
+      break;
+    }
+  }
 }
