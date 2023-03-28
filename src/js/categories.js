@@ -1,5 +1,6 @@
 import { FetchNews } from './fetchNewsApi';
 import { fetchNews } from './fetchNews';
+import { renderCard } from './renderCard';
 
 const newsAPI = new FetchNews();
 
@@ -38,7 +39,7 @@ function fetchNewsCategory() {
         categoriesContainer.appendChild(link);
       });
       createMenu(categories, newCategories);
-      // const menu = createMenu(data.results, newCategories);
+
       // menuContainer.appendChild(menu);
     })
     .catch(error => {
@@ -48,13 +49,10 @@ function fetchNewsCategory() {
 // Функция для создания ссылки
 function createLink(category) {
   const link = document.createElement('a');
-  link.classList.add('categories-container_link');
+  link.classList.add('categories-container_link', 'dropdown-link');
   link.textContent = category;
   link.setAttribute('href', '#');
   link.setAttribute('name', category);
-
-  const id = `link-${category.toLowerCase().replace(' ', '-')}`;
-  link.setAttribute('id', id);
 
   link.addEventListener('click', () => {
     const categoryName = link.getAttribute('name');
@@ -62,13 +60,20 @@ function createLink(category) {
     newsAPI
       .fetchByCategory()
       .then(articles => {
-        articles.map(article => {
-          console.log(article);
-        });
+        renderCard(articles);
       })
       .catch(error => {
         console.error(error);
       });
+
+    const links = Array.from(categoriesContainer.children);
+    links.forEach(l => {
+      if (l === link) {
+        l.classList.add('activee');
+      } else if (l.classList.contains('activee')) {
+        l.classList.remove('activee');
+      }
+    });
   });
 
   return link;
@@ -95,17 +100,17 @@ function createMenu(categories, newCategories) {
 
   filteredCategories.forEach(category => {
     const link = createLink(category);
-
     dropdown.appendChild(link);
   });
 
   const dropdownLinks = dropdown.querySelectorAll('a');
   dropdownLinks.forEach(link => {
     link.classList.add('categories-container_link_dropDown');
-  });
-  filteredCategories.forEach(category => {
-    if (uniqueCategories.includes(category)) {
-      const link = createLink(category);
+    if (categories.includes(link.getAttribute('name'))) {
+      const index = categories.indexOf(link.getAttribute('name'));
+      if (index < 5) {
+        link.classList.add('activee');
+      }
     }
   });
 
@@ -138,3 +143,5 @@ window.onclick = function (event) {
     }
   }
 };
+
+console.log('test');

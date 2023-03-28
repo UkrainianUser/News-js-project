@@ -52,7 +52,7 @@
               type="text"
               name="searchQuery"
               id="search-field__input"
-              placeholder="Search"
+              placeholder="Search |"
             />
           </form>
           <button
@@ -85,7 +85,7 @@
 
     <main>
       <div class="filter">
-        <div class="container">
+        <div class="container filter-container">
           <div class="filter__categories">
             <include
               src="./partials/home-page/filter-categories.html"
@@ -98,6 +98,22 @@
         <div class="news">
           <include src="./partials/home-page/news-card.html"></include>
           <include src="./partials/home-page/weather.html"></include>
+        </div>
+
+        <div class="wrapper-plug is-hidden">
+          <h1 class="wrapper-plug__title">
+            We haven’t found news from this category
+          </h1>
+          <img
+            srcset="
+              ./images/plug-mobile.png   320w,
+              ./images/plug-tablet.png   768w,
+              ./images/plug-desktop.png 1200w
+            "
+            src="./images/plug-mobile.png"
+            alt="Not found news"
+            class="plug-image"
+          />
         </div>
 
         <include src="./partials/home-page/pagination.html"></include>
@@ -175,5 +191,6 @@
       crossorigin="anonymous"
     ></script>
     <script type="module" src="./index.js"></script>
+    <script type="module" src="./indexHome.js"></script>
   </body>
 </html>
