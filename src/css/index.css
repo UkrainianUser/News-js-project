@@ -1086,6 +1086,10 @@ body[data-theme=dark] .activee {
   letter-spacing: -0.01em;
   color: #111321;
   margin-top: 20px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 @media (min-width: 767.98px) {
   .card-news__list .card-news__title {
