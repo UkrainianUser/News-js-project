@@ -64,8 +64,8 @@ async function onSearch(e) {
     save(NEWS_KEY, newsObject);
     const parsedNews = await load(NEWS_KEY);
     addWeather();
-    // renderCard(parsedNews);
-    updateNewsPage();
+    renderCard(parsedNews);
+    // updateNewsPage();
 
     Notify.success(`Ok! We found ${hits} news.`);
   } catch (error) {

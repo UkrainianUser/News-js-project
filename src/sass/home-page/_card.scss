@@ -82,7 +82,7 @@ img {
   color: $prim-white-color;
 }
 
-.card-news__button {
+.card-news__button, .card-news__button.read {
   position: absolute;
   bottom: 12px;
   right: 8px;
@@ -127,6 +127,11 @@ img {
   letter-spacing: -0.01em;
   color: $prim-text-color;
   margin-top: 20px;
+
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 
   @media (min-width: $pre_tablet) {
     font-size: 32px;
