@@ -1565,13 +1565,6 @@ body[data-theme=dark] .card-favorite__text {
   height: 675px;
 }
 
-.card-news__title.read {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-}
-
 /* Accordeon */
 .date__item {
   list-style-type: none;
@@ -1609,6 +1602,10 @@ body[data-theme=dark] .card-favorite__text {
   gap: 30px;
   list-style-type: none;
   padding-top: 40px;
+}
+
+.card-news__box.active::after {
+  display: none;
 }
 
 .card-favorite__list, .date__wrapper {
@@ -1738,7 +1735,6 @@ body[data-theme=dark] .card-favorite__text {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  height: 57px;
 }
 @media (min-width: 767.98px) {
   .card-favorite__text, .card-news__text.read {
