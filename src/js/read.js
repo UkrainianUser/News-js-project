@@ -89,6 +89,7 @@ function getText(news) {
       <div class="card-news__ovarlay">
       <picture>
         <img
+        class="card-news__img"
         src=${img}
         alt= "news image"
         width="360"

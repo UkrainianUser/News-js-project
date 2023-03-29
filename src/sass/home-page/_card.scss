@@ -177,3 +177,15 @@ img {
   text-decoration: none;
   cursor: pointer;
 }}
+
+
+.card-news__img {
+
+  @media (min-width: $pre_tablet) {
+
+  }
+
+  @media (min-width: $pre_desktop) {
+    height: 395px;
+  }
+}

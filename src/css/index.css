@@ -1119,6 +1119,12 @@ body[data-theme=dark] .dropbtn {
   cursor: pointer;
 }
 
+@media (min-width: 1279.98px) {
+  .card-news__img {
+    height: 395px;
+  }
+}
+
 ::-webkit-scrollbar {
   display: none;
 }

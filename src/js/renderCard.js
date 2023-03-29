@@ -16,6 +16,7 @@ export function renderCard(articles) {
 
           <div class="card-news__ovarlay">
           <img
+          class="card-news__img"
           src=${img ? img : imgNotFound}
           alt="news image"
           width="395"
