@@ -46,7 +46,14 @@ export function renderCard(articles) {
 
     if (load(WEATHER_KEY)) {
       const weather = load(WEATHER_KEY);
-      const markupAndWeather = [...markup.slice(0, 2), weather, ...markup.slice(2)].join("");
+      let markupAndWeather = "";
+      if (window.matchMedia("(max-width: 767px)").matches) {
+        markupAndWeather = [...weather, ...markup].join("");
+      } else if (window.matchMedia("(max-width: 1279px)").matches) {
+        markupAndWeather = [...markup.slice(0, 1), weather, ...markup.slice(1)].join("");
+      } else if (window.matchMedia("(min-width: 1280px)").matches) {
+        markupAndWeather = [...markup.slice(0, 2), weather, ...markup.slice(2)].join("");
+      }
       articleList.innerHTML = markupAndWeather;
       console.log(articles);
     }
