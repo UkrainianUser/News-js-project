@@ -82,7 +82,7 @@ img {
   color: $prim-white-color;
 }
 
-.card-news__button {
+.card-news__button, .card-news__button.read {
   position: absolute;
   bottom: 12px;
   right: 8px;

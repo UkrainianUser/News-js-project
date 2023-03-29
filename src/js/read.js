@@ -86,32 +86,32 @@ function renderCardRead(readObj) {
 function getText(news) {
   const markup = news.map(({id, title, paragraph, img, data, url, category, multimedia}) => {
       return `<li class="card-news__item read">
-      <div class="card-news__ovarlay">
+      <div class="card-news__ovarlay read">
         <img
         class="card-news__img"
         src=${img}
         alt= "news image"
-        width="360"
-        height="290"
+        width="395px"
+        height="395px"
       />
-    <p class="card-news__category">${category}</p>
-    <button data-id=${id} class="card-news__button" type="button">
+    <p class="card-news__category read">${category}</p>
+    <button data-id=${id} class="card-news__button read" type="button">
     Add to favirite
     <img src="https://icomoon.io/iconsabf18a1/12/125.svg" alt="heart-icon" width="16" height="16"/>
-        <svg class="card-news__icon" width="16" height="16">
+        <svg class="card-news__icon read" width="16" height="16">
       <use href="./svg/symbol-defs.svg#icon-heart-not-action"></use>
     </svg>
   </button>
 </div>
-<h2 class="card-news__title">
+<h2 class="card-news__title read">
     ${title}
     </h2>
-    <p class="card-news__text">
+    <p class="card-news__text read">
       ${paragraph}
     </p>
-    <time class="card-news__time">${lightFormat(new Date(data
+    <time class="card-news__time read">${lightFormat(new Date(data
         ), 'dd/MM/yyyy')}</time>
-    <a data-url=${url} class="card-news__element" href=${url} target="_blank" rel="noreferrer noopener">Read more</a>
+    <a data-url=${url} class="card-news__element read" href=${url} target="_blank" rel="noreferrer noopener">Read more</a>
   </li>`
 }).join("");
 return markup;

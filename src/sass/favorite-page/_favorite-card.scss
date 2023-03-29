@@ -1,11 +1,11 @@
-.card-favorite__list {
+.card-favorite__list,  .date__wrapper{
     @media (min-width: $pre_tablet) {
         display: flex;
         gap: 30px;
     }
 }
 
-.card-favorite__item {
+.card-favorite__item, .card-news__item.read {
     position: relative;
     margin-bottom: 28px;
     width: 288px;
@@ -23,16 +23,16 @@
 }
 
 
-.card-favorite__link {
+.card-favorite__link, .card-news__element.read {
     text-decoration: none;
 }
 
-.card-favorite__ovarlay {
+.card-favorite__ovarlay, .card-news__ovarlay.read {
     position: relative;
 }
 
 
-.card-favorite__category {
+.card-favorite__category, .card-news__category.read {
     position: absolute;
     top: 40px;
     width: 112px;
@@ -50,7 +50,7 @@
     color: $prim-white-color;
 }
 
-.card-favorite__button {
+.card-favorite__button, .card-news__button.read {
     position: absolute;
     bottom: 12px;
     right: 8px;
@@ -73,11 +73,11 @@
     
 }
 
-.card-favorite__icon {
+.card-favorite__icon, .card-news__icon.read {
     fill:$prim-text-color;
 }
 
-.card-favorite__title {
+.card-favorite__title, .card-news__title.read {
     font-family: $prim-font;
     font-weight: 700;
     font-size: 24px;
@@ -92,7 +92,7 @@
 
 }
 
-.card-favorite__text {
+.card-favorite__text, .card-news__text.read {
     font-family: $prim-font;
     font-weight: 400;
     font-size: 14px;
@@ -107,7 +107,7 @@
     }
 }
 
-.card-favorite__time {
+.card-favorite__time, .card-news__time.read {
     font-family: $prim-font;
     font-weight: 400;
     font-size: 14px;
