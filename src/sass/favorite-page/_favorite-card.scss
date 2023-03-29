@@ -1,7 +1,9 @@
 .card-favorite__list,  .date__wrapper{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
     @media (min-width: $pre_tablet) {
-        display: flex;
-        gap: 30px;
+
     }
 }
 
