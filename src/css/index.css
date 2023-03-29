@@ -1024,11 +1024,6 @@ body[data-theme=dark] .card-favorite__text {
     display: flex;
   }
 }
-@media (max-width: 768px) {
-  .card-news__list .card-news__item:nth-child(2) {
-    margin-right: 0;
-  }
-}
 .card-news__list .card-news__item {
   position: relative;
   margin-bottom: 28px;
@@ -1618,9 +1613,30 @@ body[data-theme=dark] .card-favorite__text {
 
 .card-favorite__list, .date__wrapper {
   display: flex;
-  gap: 30px;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
 }
+@media (min-width: 767.98px) {
+  .card-favorite__list, .date__wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+}
+@media (min-width: 768px) {
+  .card-favorite__list, .date__wrapper {
+    display: flex;
+    gap: 30px;
+  }
+}
+@media (min-width: 1280px) {
+  .card-favorite__list, .date__wrapper {
+    display: flex;
+  }
+}
+
 .card-favorite__item, .card-news__item.read {
   position: relative;
   margin-bottom: 28px;
@@ -1646,6 +1662,7 @@ body[data-theme=dark] .card-favorite__text {
 
 .card-favorite__ovarlay, .card-news__ovarlay.read {
   position: relative;
+  overflow: hidden;
 }
 
 .card-favorite__category, .card-news__category.read {
@@ -1670,7 +1687,6 @@ body[data-theme=dark] .card-favorite__text {
   position: absolute;
   bottom: 12px;
   right: 8px;
-  width: 168px;
   height: 28px;
   font-family: "Manrope", sans-serif;
   font-weight: 500;
@@ -1699,6 +1715,10 @@ body[data-theme=dark] .card-favorite__text {
   letter-spacing: -0.01em;
   color: #111321;
   margin-top: 20px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 @media (min-width: 767.98px) {
   .card-favorite__title, .card-news__title.read {
@@ -1714,6 +1734,11 @@ body[data-theme=dark] .card-favorite__text {
   color: #111321;
   margin-top: 20px;
   margin-bottom: 20px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  height: 57px;
 }
 @media (min-width: 767.98px) {
   .card-favorite__text, .card-news__text.read {
