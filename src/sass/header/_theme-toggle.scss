@@ -67,6 +67,10 @@ body[data-theme="light"] {
 		background-color: #f4f4f4;
 		
 		}
+	& .activee {
+    background-color: #4440F6;
+    color: #fff;
+  }
 
 }
 
@@ -128,8 +132,11 @@ body[data-theme="dark"] {
 		}
 	& .dropbtn{
 		background-color: #f4f4f4;
-	
 	}	
+	& .activee {
+    background-color: #4440F6;
+    color: #fff;
+  }
  }
 
 .theme-switch {

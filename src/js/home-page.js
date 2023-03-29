@@ -37,6 +37,7 @@ window.addEventListener('load', async (event) => {
   try {
     await fetchNews();
     updateNewsPage();
+    getActiveBtn(paginationIndex);
   } catch(error) {
     console.log(error.message);
   }
