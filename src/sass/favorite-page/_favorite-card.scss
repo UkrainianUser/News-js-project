@@ -1,10 +1,23 @@
 .card-favorite__list,  .date__wrapper{
     display: flex;
-    gap: 30px;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
     @media (min-width: $pre_tablet) {
-
-    }
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 32px;
+        }
+        @media (min-width: 768px) {
+            display: flex;
+            gap: 30px;
+        }
+    
+        @media (min-width: 1280px) {
+            display: flex;
+            // flex-direction: row-reverse;
+        }
 }
 
 .card-favorite__item, .card-news__item.read {
@@ -31,6 +44,7 @@
 
 .card-favorite__ovarlay, .card-news__ovarlay.read {
     position: relative;
+    overflow: hidden;
 }
 
 
@@ -56,7 +70,7 @@
     position: absolute;
     bottom: 12px;
     right: 8px;
-    width: 168px;
+    // width: 168px;
     height: 28px;
     font-family: $prim-font;
     font-weight: 500;
@@ -88,6 +102,11 @@
     color: $prim-text-color;
     margin-top: 20px;
 
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
     @media (min-width: $pre_tablet) {
         font-size: 32px;
     }
@@ -102,6 +121,12 @@
     color:$prim-text-color;
     margin-top: 20px;
     margin-bottom: 20px;
+
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
 
     @media (min-width: $pre_tablet) {
         font-size: 16px;
@@ -120,7 +145,7 @@
 
 }
 
-.card-favorite__element {
+.card-favorite__element, .card-news__element.read {
     position: absolute;
     right: 17px;
     font-family: $prim-font;

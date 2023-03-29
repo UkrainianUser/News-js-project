@@ -1,5 +1,6 @@
 .date__wrapper {
     display: flex;
+    flex-direction: column;
     gap: 16px;
 }
 .card-news__item.read {
@@ -13,7 +14,8 @@
 /* Accordeon */
 .date__item {
     list-style-type: none;
-    display: contents;
+    // display: contents;
+    display: flex;
     cursor: pointer;
     padding-top: 60px;
     padding-bottom: 12px;
@@ -43,4 +45,8 @@
     gap: 30px;
     list-style-type: none;
     padding-top: 40px;
+}
+
+.card-news__box.active::after {
+    display: none;
 }
