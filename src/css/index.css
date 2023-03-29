@@ -1602,6 +1602,18 @@ body[data-theme=dark] .card-favorite__text {
   gap: 30px;
   list-style-type: none;
   padding-top: 40px;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .card-news__box.active {
+    display: flex;
+    justify-content: start;
+  }
+}
+@media (min-width: 1280px) {
+  .card-news__box.active {
+    display: flex;
+  }
 }
 
 .card-news__box.active::after {
@@ -1614,17 +1626,10 @@ body[data-theme=dark] .card-favorite__text {
   justify-content: center;
   gap: 32px;
 }
-@media (min-width: 767.98px) {
-  .card-favorite__list, .date__wrapper {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 32px;
-  }
-}
 @media (min-width: 768px) {
   .card-favorite__list, .date__wrapper {
     display: flex;
+    justify-content: start;
     gap: 30px;
   }
 }

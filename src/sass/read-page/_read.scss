@@ -45,6 +45,18 @@
     gap: 30px;
     list-style-type: none;
     padding-top: 40px;
+
+    justify-content: center;
+        @media (min-width: 768px) {
+            display: flex;
+            justify-content: start;
+        }
+    
+        @media (min-width: 1280px) {
+            display: flex;
+            // flex-direction: row-reverse;
+        }
+
 }
 
 .card-news__box.active::after {
