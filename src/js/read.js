@@ -33,7 +33,7 @@ function getSortDate(news) {
   });
   console.log(dateArray);
 
-  const sortDateArray = dateArray.sort(compareDesc);
+  const sortDateArray = dateArray.filter((item) => {return item }).sort(compareDesc);
 
   const rangeDate = eachDayOfInterval({
     start: new Date(sortDateArray[sortDateArray.length - 1]),
