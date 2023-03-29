@@ -34,7 +34,7 @@ body[data-theme="light"] {
 	}
 
 	& input[placeholder]{
-		color: $lt-placeholder-color;
+		color: $prim-text-color;
 	}
 
 	& .mobile-menu__icon-close,
@@ -110,7 +110,7 @@ body[data-theme="dark"] {
 	}
 
 	& input[placeholder] {
-		color: $dt-placeholder-color;
+		color: $dt-prim-text-color;
 	}
 
 	& .mobile-menu__icon-close,
