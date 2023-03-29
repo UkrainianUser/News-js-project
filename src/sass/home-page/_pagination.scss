@@ -49,7 +49,8 @@
 
 .pagination__button:hover,
 .pagination__button-prev:hover,
-.pagination__button-next:hover {
+.pagination__button-next:hover,
+.pagination__button.current{
   background-color:  #4440F7;
   color: #fff;
 }

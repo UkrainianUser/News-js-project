@@ -28,3 +28,12 @@ export  function getnewsPerPage() {
       }
       return newsPerPage;
 }
+
+export function getActiveBtn(index) {
+  const allBtn = document.getElementsByClassName("pagination__button");
+  console.log(allBtn.length)
+ Array.from({ length: allBtn.length}, (v, k) => k).forEach((element) => {
+    allBtn[element].classList.remove("current");
+ });
+ allBtn[index].classList.add("current");
+}
