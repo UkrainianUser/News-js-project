@@ -11,11 +11,12 @@ let numberNews = 0;
 export function renderCard(articles) {
   // console.log(articles);
   const markup = articles
-    .map(({ id, title, paragraph, img, data, url, category, multimedia }) => {
+    ?.map(({ id, title, paragraph, img, data, url, category, multimedia }) => {
       return `<li class="card-news__item" data-read=${url}>
 
           <div class="card-news__ovarlay">
           <img
+          class="card-news__img"
           src=${img ? img : imgNotFound}
           alt="news image"
           width="395"

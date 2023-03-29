@@ -3,7 +3,7 @@ import "flatpickr/dist/flatpickr.min.css";
 import { fetchNews } from './fetchNews';
 import { load, save, remove } from './storage';
 import { renderCard } from './renderCard';
-import { renderPaginationBtn, getNewsByPage, getnewsPerPage} from './pagination';
+import { renderPaginationBtn, getNewsByPage, getnewsPerPage, getActiveBtn } from './pagination';
 import { addWeather } from "./weatherBase";
 
 const NEWS_KEY = 'newsObject';
@@ -105,6 +105,7 @@ export function updateNewsPage() {
   paginationBtn.addEventListener("click", (event) => {
     paginationIndex = Number(event.target.dataset.id);
     getNewsByPage(newsPerPage, paginationIndex, parsedNews);
+    getActiveBtn(paginationIndex);
   });
   paginationPrevBtn.addEventListener("click", (event) => {
     if (paginationIndex === 0) {
@@ -112,6 +113,7 @@ export function updateNewsPage() {
     }
     paginationIndex -= 1;
     getNewsByPage(newsPerPage, paginationIndex, parsedNews);
+    getActiveBtn(paginationIndex);
   });
   paginationNextBtn.addEventListener("click", (event) => {
     if (paginationIndex === totalPage - 1) {
@@ -119,5 +121,6 @@ export function updateNewsPage() {
     }
     paginationIndex += 1;
     getNewsByPage(newsPerPage, paginationIndex, parsedNews);
+    getActiveBtn(paginationIndex);
   });
 }
