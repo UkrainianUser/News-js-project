@@ -87,7 +87,6 @@ function getText(news) {
   const markup = news.map(({id, title, paragraph, img, data, url, category, multimedia}) => {
       return `<li class="card-news__item read">
       <div class="card-news__ovarlay">
-      <picture>
         <img
         class="card-news__img"
         src=${img}
@@ -95,11 +94,11 @@ function getText(news) {
         width="360"
         height="290"
       />
-      </picture>
     <p class="card-news__category">${category}</p>
     <button data-id=${id} class="card-news__button" type="button">
     Add to favirite
-    <svg class="card-news__icon" width="16" height="16">
+    <img src="https://icomoon.io/iconsabf18a1/12/125.svg" alt="heart-icon" width="16" height="16"/>
+        <svg class="card-news__icon" width="16" height="16">
       <use href="./svg/symbol-defs.svg#icon-heart-not-action"></use>
     </svg>
   </button>
