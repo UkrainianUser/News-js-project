@@ -60,12 +60,12 @@ async function onSearch(e) {
     refs.plug.classList.add('is-hidden');
     refs.pagination.classList.remove('is-hidden');
     const newsObject = normalizeObj(cards);
-    // remove(NEWS_KEY);
+    remove(NEWS_KEY);
     save(NEWS_KEY, newsObject);
     const parsedNews = await load(NEWS_KEY);
     addWeather();
-    renderCard(parsedNews);
-    // updateNewsPage();
+    // renderCard(parsedNews);
+    updateNewsPage();
 
     Notify.success(`Ok! We found ${hits} news.`);
   } catch (error) {
