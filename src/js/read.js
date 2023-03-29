@@ -39,7 +39,7 @@ function getSortDate(news) {
     start: new Date(sortDateArray[sortDateArray.length - 1]),
     end: new Date(sortDateArray[0]),
   });
-  return rangeDate;
+  return rangeDate.sort(compareDesc);
 }
 
 dateWrapper.addEventListener('click', handleClickBtn);
