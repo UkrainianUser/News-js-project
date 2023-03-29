@@ -72,6 +72,14 @@ body[data-theme="light"] {
     color: #fff;
   }
 
+	& .card-favorite__title {
+		color: $prim-text-color;
+	}
+
+	& .card-favorite__text {
+		color: $prim-text-color;
+	}
+
 }
 
 body[data-theme="dark"] {
@@ -137,6 +145,15 @@ body[data-theme="dark"] {
     background-color: #4440F6;
     color: #fff;
   }
+
+	& .card-favorite__title {
+		color: #f4f4f4;
+	}
+
+	& .card-favorite__text {
+		color: #f4f4f4;
+	}
+
  }
 
 .theme-switch {
