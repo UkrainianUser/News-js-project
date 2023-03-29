@@ -68,6 +68,8 @@ function handleClickBtn(event) {
 
 function renderCardRead(readObj) {
   const markup = Object.keys(readObj)
+  .filter((item) => {
+    return readObj[item].length !== 0;})
     .map((item, index) => {
       return `  <li class="date__item" data-index=${index}>
         <div class="date__card"><h3 class="date__text">${lightFormat(
