@@ -1558,6 +1558,7 @@ body[data-theme=dark] .card-favorite__text {
 
 .date__wrapper {
   display: flex;
+  flex-direction: column;
   gap: 16px;
 }
 
@@ -1569,10 +1570,17 @@ body[data-theme=dark] .card-favorite__text {
   height: 675px;
 }
 
+.card-news__title.read {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
 /* Accordeon */
 .date__item {
   list-style-type: none;
-  display: contents;
+  display: flex;
   cursor: pointer;
   padding-top: 60px;
   padding-bottom: 12px;
@@ -1724,7 +1732,7 @@ body[data-theme=dark] .card-favorite__text {
   display: inline-block;
 }
 
-.card-favorite__element {
+.card-favorite__element, .card-news__element.read {
   position: absolute;
   right: 17px;
   font-family: "Manrope", sans-serif;

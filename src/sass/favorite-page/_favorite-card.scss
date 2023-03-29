@@ -120,7 +120,7 @@
 
 }
 
-.card-favorite__element {
+.card-favorite__element, .card-news__element.read {
     position: absolute;
     right: 17px;
     font-family: $prim-font;
