@@ -9,6 +9,9 @@ const menuContainer = document.getElementById('menu-container');
 const dropbtn = document.querySelector('.dropbtn');
 const mediaQueryTablet = window.matchMedia('(max-width: 1278px)');
 const mediaQueryMobile = window.matchMedia('(max-width: 767px)');
+
+const loader = document.getElementById('loader');
+
 let linkCount;
 let resizeTimeout;
 
@@ -99,7 +102,9 @@ function createLink(category) {
     newsAPI.category = categoryName;
     newsAPI
       .fetchByCategory()
+
       .then(articles => {
+        loader.style.display = 'none';
         renderCard(articles);
       })
       .catch(error => {

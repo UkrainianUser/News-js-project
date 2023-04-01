@@ -2,6 +2,8 @@ import axios from 'axios';
 
 const BASE_URL = 'https://api.nytimes.com/svc/';
 const API_KEY = 'UPfW6vgRuPuGF8dWeumSDLnq86AeLhG1';
+const loader = document.getElementById('loader');
+const containerCards = document.querySelector('.card-news__list');
 
 export class FetchNews {
   constructor() {
@@ -38,46 +40,9 @@ export class FetchNews {
     return response.data;
   }
 
-  // async fetchByCategory() {
-  //   const response = await axios.get(
-  //     `${BASE_URL}news/v3/content/all/${encodeURIComponent(
-  //       this.category
-  //     )}.json`,
-
-  //     {
-  //       params: {
-  //         'api-key': API_KEY,
-  //         fl: 'uri,title,abstract,thumbnail_standard,published_date,url,multimedia,section',
-  //       },
-  //     }
-  //   );
-
-  //   return response.data.results.map(
-  //     ({
-  //       uri,
-  //       title,
-  //       abstract,
-  //       thumbnail_standard,
-  //       published_date,
-  //       url,
-  //       multimedia,
-  //       section,
-  //     }) => {
-  //       return {
-  //         id: uri,
-  //         title,
-  //         paragraph: abstract,
-  //         img: thumbnail_standard,
-  //         data: published_date,
-  //         url,
-  //         multimedia,
-  //         category: section,
-  //       };
-  //     }
-  //   );
-  // }
-
   async fetchByCategory() {
+    containerCards.innerHTML = '';
+    loader.style.display = 'block';
     const response = await axios.get(
       `${BASE_URL}news/v3/content/all/${encodeURIComponent(
         this.category
