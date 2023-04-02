@@ -1105,6 +1105,7 @@ body[data-theme=dark] .card-favorite__text {
   fill: #4440f6;
 }
 .card-news__list .card-news__title {
+  height: 132px;
   font-family: "Manrope", sans-serif;
   font-weight: 700;
   font-size: 24px;
