@@ -3,14 +3,17 @@ const paginationWrapper = document.querySelector(".pagination");
 const paginationBtn = document.querySelector(".pagination__list-button");
 let newsPerPage = 0;
 export function renderPaginationBtn(total) {
-        paginationWrapper.classList.remove("hidden");
-        const numberArray = Array.from({ length: total}, (v, k) => k);
-        console.log(numberArray);
-        const markup = numberArray.map((item) => {
-            return `<li class="pagination__item" data-id=${item}>
-            <button class="pagination__button" type="button" data-id=${item}>${item + 1}</button></li>`
-        }).join("");
-        paginationBtn.innerHTML = markup;
+  if (total === 1) {
+    return;
+  }
+  paginationWrapper.classList.remove("hidden");
+  const numberArray = Array.from({ length: total}, (v, k) => k);
+  console.log(numberArray);
+  const markup = numberArray.map((item) => {
+    return `<li class="pagination__item" data-id=${item}>
+      <button class="pagination__button" type="button" data-id=${item}>${item + 1}</button></li>`
+  }).join("");
+  paginationBtn.innerHTML = markup;
 }
 export function getNewsByPage(perPage, activeIndex, news) {
     const start = perPage * activeIndex;

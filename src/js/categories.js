@@ -1,8 +1,12 @@
 import { FetchNews } from './fetchNewsApi';
 import { fetchNews } from './fetchNews';
-import { renderCard } from './renderCard';
+import { renderCard, cleanCard } from './renderCard';
+import { remove, save } from './storage';
+import { updateNewsPage } from './home-page';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const newsAPI = new FetchNews();
+const NEWS_KEY = 'newsObject';
 
 const categoriesContainer = document.getElementById('categories-container');
 // const menuContainer = document.getElementById('menu-container');
@@ -11,6 +15,8 @@ const mediaQueryTablet = window.matchMedia('(max-width: 1278px)');
 const mediaQueryMobile = window.matchMedia('(max-width: 767px)');
 let linkCount;
 let resizeTimeout;
+const plug = document.querySelector('.wrapper-plug');
+const pagination = document.querySelector('.pagination');
 
 fetchNewsCategory();
 test();
@@ -100,10 +106,20 @@ function createLink(category) {
     newsAPI
       .fetchByCategory()
       .then(articles => {
-        renderCard(articles);
+        plug.classList.add('is-hidden');
+        remove(NEWS_KEY, articles);
+        save(NEWS_KEY, articles);
+        updateNewsPage();
       })
       .catch(error => {
         console.error(error);
+        Notify.failure(
+          'Sorry, there are no news matching your search query. Please try again.'
+        );
+        cleanCard();
+        plug.classList.remove('is-hidden');
+        pagination.classList.add('hidden');
+        return;
       });
 
     const links = Array.from(categoriesContainer.children);
