@@ -11,7 +11,6 @@ const mediaQueryTablet = window.matchMedia('(max-width: 1278px)');
 const mediaQueryMobile = window.matchMedia('(max-width: 767px)');
 let linkCount;
 let resizeTimeout;
-const plug = document.querySelector('.wrapper-plug');
 
 fetchNewsCategory();
 test();
@@ -101,7 +100,6 @@ function createLink(category) {
     newsAPI
       .fetchByCategory()
       .then(articles => {
-        plug.classList.add('is-hidden');
         renderCard(articles);
       })
       .catch(error => {
