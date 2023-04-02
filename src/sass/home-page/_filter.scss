@@ -124,11 +124,48 @@ font-weight: 400;
         display: flex;
         margin-top: 24px;
 
-        @media (min-width: 769px) {
-            margin-top: 28px;
-        }
-    }
+  .loader {
+    border: 16px solid #F3F3FC;
+    border-top: 16px solid #4440F6;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    position: fixed;
+    top: 30%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    display: none;
   }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+//   ---------------------------------------------------------------------------
+//   @media screen and (max-width: 768px) {
+//     /* Скрыть 4-ю и 5-ю ссылки */
+//     .categories-container_link:nth-child(n+4) {
+//       display: none;
+//     }
+//     /* Показать выпадающее меню */
+//     .dropdown {
+//       display: block;
+//     }
+//   }
+  
+//   @media screen and (max-width: 1278px) {
+//     /* Скрыть 6-ю и 7-ю ссылки */
+//     .categories-container_link:nth-child(n+6) {
+//       display: none;
+//     }
+//     /* Показать выпадающее меню */
+//     .dropdown {
+//       display: block;
+//     }
+//   }
 
   .flatpickr-input {
     display: flex;
