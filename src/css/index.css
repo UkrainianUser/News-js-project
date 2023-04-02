@@ -364,7 +364,7 @@ body[data-theme=light] .mobile-menu__link--current {
   color: #f4f4f4;
 }
 body[data-theme=light] input[placeholder] {
-  color: rgba(17, 19, 33, 0.4);
+  color: #111321;
 }
 body[data-theme=light] .mobile-menu__icon-close, body[data-theme=light] .icon-burger-menu {
   fill: #111321;
@@ -422,7 +422,7 @@ body[data-theme=dark] .mobile-menu__link {
   color: #f4f4f4;
 }
 body[data-theme=dark] input[placeholder] {
-  color: rgba(244, 244, 244, 0.4);
+  color: #f4f4f4;
 }
 body[data-theme=dark] .mobile-menu__icon-close, body[data-theme=dark] .icon-burger-menu {
   fill: #f4f4f4;
@@ -805,7 +805,7 @@ body[data-theme=light] .mobile-menu__link--current {
   color: #f4f4f4;
 }
 body[data-theme=light] input[placeholder] {
-  color: rgba(17, 19, 33, 0.4);
+  color: #111321;
 }
 body[data-theme=light] .mobile-menu__icon-close, body[data-theme=light] .icon-burger-menu {
   fill: #111321;
@@ -863,7 +863,7 @@ body[data-theme=dark] .mobile-menu__link {
   color: #f4f4f4;
 }
 body[data-theme=dark] input[placeholder] {
-  color: rgba(244, 244, 244, 0.4);
+  color: #f4f4f4;
 }
 body[data-theme=dark] .mobile-menu__icon-close, body[data-theme=dark] .icon-burger-menu {
   fill: #f4f4f4;
