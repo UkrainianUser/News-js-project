@@ -75,13 +75,13 @@
     justify-content: center;
     align-items: center;
     gap: 4px;
-    // padding: 6px 12px;
+    padding: 6px 12px;
     text-align: center;
     color: $prim-text-color;
     background-color:$prim-white-color;
     border:$prim-white-color;
     border-radius: 20px;
-    
+    cursor: pointer;
 }
 
 .card-favorite__icon, .card-news__icon.read {

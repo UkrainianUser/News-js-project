@@ -6,7 +6,7 @@
   gap: 32px;
   @media (min-width: $pre_tablet) {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     flex-wrap: wrap;
     gap: 32px;
     @media (min-width: 768px) {
@@ -95,12 +95,13 @@ img {
   justify-content: center;
   align-items: center;
   gap: 4px;
-  // padding: 6px 12px;
+  padding: 6px 12px;
   text-align: center;
   color: $prim-text-color;
   background-color: $prim-white-color;
   border: $prim-white-color;
   border-radius: 20px;
+  cursor: pointer;
 }
 
 .card-news__button--add {

@@ -56,6 +56,11 @@ ul {
   list-style-type: none;
 }
 
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 body {
   font-family: "Manrope", sans-serif;
   font-size: 16px;
@@ -1008,7 +1013,7 @@ body[data-theme=dark] .card-favorite__text {
 @media (min-width: 767.98px) {
   .card-news__list {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     flex-wrap: wrap;
     gap: 32px;
   }
@@ -1082,11 +1087,13 @@ body[data-theme=dark] .card-favorite__text {
   justify-content: center;
   align-items: center;
   gap: 4px;
+  padding: 6px 12px;
   text-align: center;
   color: #111321;
   background-color: #ffffff;
   border: #ffffff;
   border-radius: 20px;
+  cursor: pointer;
 }
 .card-news__list .card-news__button--add {
   width: 126px;
@@ -1714,11 +1721,13 @@ body[data-theme=dark] .card-favorite__text {
   justify-content: center;
   align-items: center;
   gap: 4px;
+  padding: 6px 12px;
   text-align: center;
   color: #111321;
   background-color: #ffffff;
   border: #ffffff;
   border-radius: 20px;
+  cursor: pointer;
 }
 
 .card-favorite__icon, .card-news__icon.read {
