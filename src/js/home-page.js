@@ -47,6 +47,8 @@ function handleClickFavoriteBtn(event) {
   const favoritNewsId = event.target.dataset.id;
 
   event.target.textContent = "Remove from favorite";
+  event.target.style.backgroundColor = "#4B48DB";
+  event.target.style.color = "#fff";
 
   const parsedNews = load(NEWS_KEY);
   const parsedeFavoriteNews = load(FAVORITE_KEY);

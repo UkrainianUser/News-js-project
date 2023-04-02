@@ -48,9 +48,6 @@ function renderCardFavorite(news) {
         <p class="card-favorite__category">${category}</p>
         <button data-id=${id} class="card-favorite__button" type="button">
         Remove from favorite
-        <svg class="card-favorite__icon" width="16" height="16">
-          <use href="./svg/symbol-defs.svg#icon-heart-not-action"></use>
-        </svg>
       </button>
     </div>
     <h2 class="card-favorite__title">

@@ -47,6 +47,11 @@ function handleClickBtn(event) {
   if (event.target.nodeName !== 'BUTTON') {
     return;
   }
+
+  event.target.textContent = "Remove from favorite";
+  event.target.style.backgroundColor = "#4B48DB";
+  event.target.style.color = "#fff";
+
   const favoritNewsId = event.target.dataset.id;
   const parsedReadNews = load(READ_KEY);
   const parsedeFavoriteNews = load(FAVORITE_KEY);
@@ -97,10 +102,6 @@ function getText(news) {
     <p class="card-news__category read">${category}</p>
     <button data-id=${id} class="card-news__button read" type="button">
     Add to favirite
-    <img src="https://icomoon.io/iconsabf18a1/12/125.svg" alt="heart-icon" width="16" height="16"/>
-        <svg class="card-news__icon read" width="16" height="16">
-      <use href="./svg/symbol-defs.svg#icon-heart-not-action"></use>
-    </svg>
   </button>
 </div>
 <h2 class="card-news__title read">
