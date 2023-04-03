@@ -21,7 +21,7 @@ export async function fetchNews() {
             id: uri,
             title,
             paragraph: abstract,
-            img: multimedia ? multimedia[1].url : thumbnail_standard,
+            img: multimedia ? multimedia[2].url : thumbnail_standard,
             data: published_date,
             url,
             multimedia,

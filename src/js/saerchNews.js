@@ -87,7 +87,7 @@ function normalizeObj(news) {
     }) => {
       let imageURL = '';
       if (multimedia.length !== 0) {
-        imageURL = `${IMAGE_BASE_URL}${multimedia[0].url}`;
+        imageURL = `${IMAGE_BASE_URL}${multimedia[2].url}`;
       }
 
       return {
