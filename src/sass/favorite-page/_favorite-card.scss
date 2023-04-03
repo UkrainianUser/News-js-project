@@ -1,11 +1,21 @@
-.card-favorite__list {
-    @media (min-width: $pre_tablet) {
-        display: flex;
-        gap: 30px;
-    }
+.card-favorite__list,  .date__wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+        @media (min-width: 768px) {
+            display: flex;
+            justify-content: start;
+            gap: 30px;
+        }
+    
+        @media (min-width: 1280px) {
+            display: flex;
+            // flex-direction: row-reverse;
+        }
 }
 
-.card-favorite__item {
+.card-favorite__item, .card-news__item.read {
     position: relative;
     margin-bottom: 28px;
     width: 288px;
@@ -23,16 +33,17 @@
 }
 
 
-.card-favorite__link {
+.card-favorite__link, .card-news__element.read {
     text-decoration: none;
 }
 
-.card-favorite__ovarlay {
+.card-favorite__ovarlay, .card-news__ovarlay.read {
     position: relative;
+    overflow: hidden;
 }
 
 
-.card-favorite__category {
+.card-favorite__category, .card-news__category.read {
     position: absolute;
     top: 40px;
     width: 112px;
@@ -50,11 +61,11 @@
     color: $prim-white-color;
 }
 
-.card-favorite__button {
+.card-favorite__button, .card-news__button.read {
     position: absolute;
     bottom: 12px;
     right: 8px;
-    width: 168px;
+    // width: 168px;
     height: 28px;
     font-family: $prim-font;
     font-weight: 500;
@@ -64,20 +75,20 @@
     justify-content: center;
     align-items: center;
     gap: 4px;
-    // padding: 6px 12px;
+    padding: 6px 12px;
     text-align: center;
     color: $prim-text-color;
     background-color:$prim-white-color;
     border:$prim-white-color;
     border-radius: 20px;
-    
+    cursor: pointer;
 }
 
-.card-favorite__icon {
+.card-favorite__icon, .card-news__icon.read {
     fill:$prim-text-color;
 }
 
-.card-favorite__title {
+.card-favorite__title, .card-news__title.read {
     font-family: $prim-font;
     font-weight: 700;
     font-size: 24px;
@@ -86,13 +97,18 @@
     color: $prim-text-color;
     margin-top: 20px;
 
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
     @media (min-width: $pre_tablet) {
         font-size: 32px;
     }
 
 }
 
-.card-favorite__text {
+.card-favorite__text, .card-news__text.read {
     font-family: $prim-font;
     font-weight: 400;
     font-size: 14px;
@@ -101,13 +117,19 @@
     margin-top: 20px;
     margin-bottom: 20px;
 
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+
     @media (min-width: $pre_tablet) {
         font-size: 16px;
         line-height: 1.38;
     }
 }
 
-.card-favorite__time {
+.card-favorite__time, .card-news__time.read {
     font-family: $prim-font;
     font-weight: 400;
     font-size: 14px;
@@ -118,7 +140,7 @@
 
 }
 
-.card-favorite__element {
+.card-favorite__element, .card-news__element.read {
     position: absolute;
     right: 17px;
     font-family: $prim-font;

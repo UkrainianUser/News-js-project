@@ -95,11 +95,6 @@
             <input type="text" id="datetime-picker" name="date" />
           </div>
         </div>
-        <div class="news">
-          <include src="./partials/home-page/news-card.html"></include>
-          <!-- <include src="./partials/home-page/weather.html"></include> -->
-        </div>
-
         <div class="wrapper-plug is-hidden">
           <h1 class="wrapper-plug__title">
             We haven’t found news from this category
@@ -115,22 +110,25 @@
             class="plug-image"
           />
         </div>
-
-        <div class="pagination hidden">
-          <ul class="pagination__list">
-            <li class="pagination__item">
-              <button class="pagination__button-prev" type="button" id="prev">
-                Prev
-              </button>
-            </li>
-            <ul class="pagination__list-button"></ul>
-            <li class="pagination__item-next">
-              <button class="pagination__button-next" type="button" id="next">
-                Next
-              </button>
-            </li>
-          </ul>
-        </div>
+      </div>
+      <div class="news">
+        <include src="./partials/home-page/news-card.html"></include>
+        <!-- <include src="./partials/home-page/weather.html"></include> -->
+      </div>
+      <div class="pagination hidden">
+        <ul class="pagination__list">
+          <li class="pagination__item">
+            <button class="pagination__button-prev" type="button" id="prev">
+              Prev
+            </button>
+          </li>
+          <ul class="pagination__list-button"></ul>
+          <li class="pagination__item-next">
+            <button class="pagination__button-next" type="button" id="next">
+              Next
+            </button>
+          </li>
+        </ul>
       </div>
     </main>
     <!-- Mobile menu  -->

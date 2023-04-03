@@ -11,11 +11,11 @@ let numberNews = 0;
 export function renderCard(articles) {
   // console.log(articles);
   const markup = articles
-    .map(({ id, title, paragraph, img, data, url, category, multimedia }) => {
+    ?.map(({ id, title, paragraph, img, data, url, category, multimedia }) => {
       return `<li class="card-news__item" data-read=${url}>
-
           <div class="card-news__ovarlay">
           <img
+          class="card-news__img"
           src=${img ? img : imgNotFound}
           alt="news image"
           width="395"
@@ -24,10 +24,6 @@ export function renderCard(articles) {
         <p class="card-news__category">${category}</p>
         <button data-id=${id} class="card-news__button" type="button">
         Add to favorite 
-        <img src="https://icomoon.io/iconsabf18a1/12/125.svg" alt="heart-icon" width="16" height="16"/>
-        <svg class="card-news__icon" width="16" height="16">
-          <use href="./svg/symbol-defs.svg#icon-heart-not-action"></use>
-        </svg>
       </button>
     </div>
     <h2 class="card-news__title">

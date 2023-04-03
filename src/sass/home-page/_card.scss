@@ -6,7 +6,7 @@
   gap: 32px;
   @media (min-width: $pre_tablet) {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     flex-wrap: wrap;
     gap: 32px;
     @media (min-width: 768px) {
@@ -20,13 +20,13 @@
     }
 }
 
-.card-news__item:nth-child(2){
-    @media (min-width: 1280px) {
-        // margin-right: 395px;
-    }
-    @media (max-width: 768px) {
-        margin-right: 0;}
-}
+// .card-news__item:nth-child(2){
+//     @media (min-width: 1280px) {
+//         // margin-right: 395px;
+//     }
+//     @media (max-width: 768px) {
+//         margin-right: 0;}
+// }
 
 // .card-news__item:nth-child(1){
 //     @media (max-width: 1278px) {
@@ -82,7 +82,7 @@ img {
   color: $prim-white-color;
 }
 
-.card-news__button {
+.card-news__button, .card-news__button.read {
   position: absolute;
   bottom: 12px;
   right: 8px;
@@ -95,12 +95,13 @@ img {
   justify-content: center;
   align-items: center;
   gap: 4px;
-  // padding: 6px 12px;
+  padding: 6px 12px;
   text-align: center;
   color: $prim-text-color;
   background-color: $prim-white-color;
   border: $prim-white-color;
   border-radius: 20px;
+  cursor: pointer;
 }
 
 .card-news__button--add {
@@ -120,6 +121,7 @@ img {
 // }
 
 .card-news__title {
+  height: 132px;
   font-family: $prim-font;
   font-weight: 700;
   font-size: 24px;
@@ -127,6 +129,11 @@ img {
   letter-spacing: -0.01em;
   color: $prim-text-color;
   margin-top: 20px;
+
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 
   @media (min-width: $pre_tablet) {
     font-size: 32px;
@@ -177,3 +184,15 @@ img {
   text-decoration: none;
   cursor: pointer;
 }}
+
+
+.card-news__img {
+
+  @media (min-width: $pre_tablet) {
+
+  }
+
+  @media (min-width: $pre_desktop) {
+    height: 395px;
+  }
+}

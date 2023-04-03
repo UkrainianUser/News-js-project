@@ -33,8 +33,7 @@ body[data-theme="light"] {
 		color: $prim-background;
 	}
 
-	& input,
-	& input:focus {
+	& input[placeholder]{
 		color: $prim-text-color;
 	}
 
@@ -72,6 +71,18 @@ body[data-theme="light"] {
 		background-color: #f4f4f4;
 		
 		}
+	& .activee {
+    background-color: #4440F6;
+    color: #fff;
+  }
+
+	& .card-favorite__title {
+		color: $prim-text-color;
+	}
+
+	& .card-favorite__text {
+		color: $prim-text-color;
+	}
 
 }
 
@@ -102,11 +113,7 @@ body[data-theme="dark"] {
 		color: $dt-prim-text-color;
 	}
 
-	 & ::placeholder {
-	 	color: $dt-placeholder-color;
-	 }
-
-	& input, & input:focus{
+	& input[placeholder] {
 		color: $dt-prim-text-color;
 	}
 
@@ -137,8 +144,20 @@ body[data-theme="dark"] {
 		}
 	& .dropbtn{
 		background-color: #f4f4f4;
-	
 	}	
+	& .activee {
+    background-color: #4440F6;
+    color: #fff;
+  }
+
+	& .card-favorite__title {
+		color: #f4f4f4;
+	}
+
+	& .card-favorite__text {
+		color: #f4f4f4;
+	}
+
  }
 
 .theme-switch {

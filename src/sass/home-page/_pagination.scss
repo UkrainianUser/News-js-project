@@ -6,6 +6,7 @@
     padding: 30px;
     display:flex;
     justify-content: center;
+    margin-top: 64px;
   }
   .pagination__list {
     list-style-type: none;
@@ -49,7 +50,8 @@
 
 .pagination__button:hover,
 .pagination__button-prev:hover,
-.pagination__button-next:hover {
+.pagination__button-next:hover,
+.pagination__button.current{
   background-color:  #4440F7;
   color: #fff;
 }
