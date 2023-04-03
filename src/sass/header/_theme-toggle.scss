@@ -37,6 +37,10 @@ body[data-theme="light"] {
 		color: $prim-text-color;
 	}
 
+	 & ::placeholder{
+	 	color: $lt-placeholder-color;
+	 }
+
 	& .mobile-menu__icon-close,
 	& .icon-burger-menu {
 		fill: $prim-text-color;
@@ -220,8 +224,8 @@ body[data-theme="dark"] {
 #toggle::before, #mobile-toggle::before {
 	content: "";
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: 1px;
+	left: 1px;
 	width: 17px;
 	height: 17px;
 	border-radius: 20px;
