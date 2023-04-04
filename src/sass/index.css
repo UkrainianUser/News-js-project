@@ -371,6 +371,12 @@ body[data-theme=light] .mobile-menu__link--current {
 body[data-theme=light] input[placeholder] {
   color: #111321;
 }
+body[data-theme=light] ::-moz-placeholder {
+  color: rgba(17, 19, 33, 0.4);
+}
+body[data-theme=light] ::placeholder {
+  color: rgba(17, 19, 33, 0.4);
+}
 body[data-theme=light] .mobile-menu__icon-close, body[data-theme=light] .icon-burger-menu {
   fill: #111321;
 }
@@ -532,8 +538,8 @@ body[data-theme=dark] .card-favorite__text {
 #toggle::before, #mobile-toggle::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 1px;
+  left: 1px;
   width: 17px;
   height: 17px;
   border-radius: 20px;
@@ -596,11 +602,9 @@ body[data-theme=dark] .card-favorite__text {
   border: none;
   background: none;
   outline: none;
-  opacity: 0.4;
 }
 .search-field input:focus {
   color: #111321;
-  opacity: 1;
 }
 .search-field input:-webkit-autofill, .search-field input:-webkit-autofill:hover, .search-field input:-webkit-autofill:focus, .search-field input:-webkit-autofill:active {
   -webkit-transition: background-color 9999s, color 9999s;
@@ -636,6 +640,14 @@ body[data-theme=dark] .card-favorite__text {
   .search-field:hover .search-field__btn {
     padding: 4px 16px 2px 12px;
   }
+}
+
+::-moz-placeholder {
+  color: rgba(17, 19, 33, 0.4);
+}
+
+::placeholder {
+  color: rgba(17, 19, 33, 0.4);
 }
 
 .search-field__btn {
@@ -812,6 +824,12 @@ body[data-theme=light] .mobile-menu__link--current {
 body[data-theme=light] input[placeholder] {
   color: #111321;
 }
+body[data-theme=light] ::-moz-placeholder {
+  color: rgba(17, 19, 33, 0.4);
+}
+body[data-theme=light] ::placeholder {
+  color: rgba(17, 19, 33, 0.4);
+}
 body[data-theme=light] .mobile-menu__icon-close, body[data-theme=light] .icon-burger-menu {
   fill: #111321;
 }
@@ -973,8 +991,8 @@ body[data-theme=dark] .card-favorite__text {
 #toggle::before, #mobile-toggle::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 1px;
+  left: 1px;
   width: 17px;
   height: 17px;
   border-radius: 20px;
@@ -1284,11 +1302,7 @@ body[data-theme=dark] .card-favorite__text {
   color: #fff;
 }
 
-.filter__date {
-  display: flex;
-  margin-top: 24px;
-}
-.filter__date .loader {
+.loader {
   border: 16px solid #F3F3FC;
   border-top: 16px solid #4440F6;
   border-radius: 50%;
@@ -1302,6 +1316,7 @@ body[data-theme=dark] .card-favorite__text {
   z-index: 9999;
   display: none;
 }
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -1309,6 +1324,10 @@ body[data-theme=dark] .card-favorite__text {
   100% {
     transform: rotate(360deg);
   }
+}
+.filter__date {
+  display: flex;
+  margin-top: 24px;
 }
 .filter__date .flatpickr-input {
   display: flex;

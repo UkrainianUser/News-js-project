@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const BASE_URL = 'https://api.nytimes.com/svc/';
 const API_KEY = 'UPfW6vgRuPuGF8dWeumSDLnq86AeLhG1';
-const loader = document.getElementById('loader');
+// const loader = document.querySelector('.loader');
 const containerCards = document.querySelector('.card-news__list');
 
 export class FetchNews {
@@ -42,7 +42,7 @@ export class FetchNews {
 
   async fetchByCategory() {
     containerCards.innerHTML = '';
-    loader.style.display = 'block';
+    // loader.style.display = 'block';
     const response = await axios.get(
       `${BASE_URL}news/v3/content/all/${encodeURIComponent(
         this.category
