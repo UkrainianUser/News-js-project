@@ -14,7 +14,7 @@ const dropbtn = document.querySelector('.dropbtn');
 const mediaQueryTablet = window.matchMedia('(max-width: 1278px)');
 const mediaQueryMobile = window.matchMedia('(max-width: 767px)');
 
-const loader = document.getElementById('loader');
+const loader = document.querySelector('.loader');
 
 let linkCount;
 let resizeTimeout;
@@ -108,13 +108,14 @@ function createLink(category) {
     newsAPI.category = categoryName;
     newsAPI
       .fetchByCategory()
-
       .then(articles => {
-        loader.style.display = 'none';
-        plug.classList.add('is-hidden');
-        remove(NEWS_KEY, articles);
-        save(NEWS_KEY, articles);
-        updateNewsPage();
+        loader.style.display = 'block';
+        setTimeout(() => {
+          loader.style.display = 'none';
+          plug.classList.add('is-hidden');
+          save(NEWS_KEY, articles);
+          updateNewsPage();
+        }, 1500);
       })
       .catch(error => {
         console.error(error);

@@ -1219,7 +1219,8 @@ body[data-theme=dark] .card-favorite__text {
 }
 
 .categories-container_link:hover {
-  color: #4440F6;
+  background-color: #4440F6;
+  color: #fff;
 }
 
 .categories-container_link_dropDown:hover {
@@ -1251,11 +1252,6 @@ body[data-theme=dark] .card-favorite__text {
   font-family: "Manrope";
   font-style: normal;
   font-weight: 400;
-}
-
-.navbar__link:hover, .dropdown:hover .dropbtn {
-  color: rgb(255, 255, 255);
-  background-color: #4440F6;
 }
 
 .dropdown-content {
